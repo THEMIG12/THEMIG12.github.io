@@ -1,4 +1,4 @@
-<?php
+<?html
 session_start();
 ?>
 <html>
@@ -8,230 +8,8 @@ session_start();
 
 <!-- Add Webicon -->
 <link rel="icon" href="Pics/Logo.webp" type="image/x-icon">
-<style>
-body {
-    background-color: black;
-    background-attachment: fixed;
-}
+<link rel="stylesheet" href="style.css">
 
-.nav {
-    background-color: black;
-    margin-top: 50px;
-    z-index: 1000;
-}
-
-ul {
-    list-style-type: none;
-    position: fixed;
-}
-
-.li-right {
-    width: 300px;
-    height: auto;
-    padding-top: 20px;
-}
-
-li {
-    float: right;
-    font-size: 1.3vw;
-}
-
-.navbuttons {
-    width: 6.8vmax;
-    height: auto;
-    padding-top: 20px;
-    display: block;
-}
-
-li a {
-    display: block;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    width: 14px;
-    height: 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #00ccf5bb;
-    border-radius: 10px;
-}
-
-.active {
-    background-color: #00ccf5ae;
-    border-radius: 10px;
-}
-
-.logo {
-    float: right;
-    width: auto;
-    padding-right: 50px;
-}
-
-.home {
-    width: auto;
-    height: auto;
-    padding-top: 20px;
-    padding-right: 50px;
-}
-
-a {
-    text-decoration: none;
-    text-align: center;
-}
-
-footer {
-    text-align: right;
-    padding: 100px;
-    background-color: #1a1a1a;
-    color: white;
-    width: 100%;
-}
-
-.fa {
-    margin-right: 4px;
-    padding: 0px;
-    font-size: 25px;
-    width: 35px;
-    border-radius: 30px;
-    list-style: none;
-}
-
-.fa-instagram {
-    background: linear-gradient(#feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    color: white;
-}
-
-.fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-.fa-whatsapp {
-    background: MediumSeaGreen;
-    color: white;
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 4px;
-}
-
-#footer-info,
-#footer-contact,
-#footer-hours {
-    flex: 1;
-    text-align: center;
-}
-
-#footer-info {
-    text-align: left;
-    margin-left: 10px;
-}
-
-#footer-contact {
-    text-align: center;
-}
-
-#footer-hours {
-    text-align: right;
-    direction: rtl;
-    margin-right: 10px;
-}
-
-#editt {
-    width: auto;
-    margin-left: 13px;
-}
-
-#fleft {
-    float: left;
-}
-
-.big-font {
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.moonphase-container {
-    display: flex;
-    align-items: right;
-}
-
-.text-beside-moonphase {
-    margin-left: auto;
-    font-size: 24px;
-}
-
-.square-blocks-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.square-block {
-    width: 350px;
-    height: 400px;
-    margin: 10px;
-    background-color: #00ccf5ae;
-    text-align: right;
-    font-size: 22px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2px;
-}
-
-.block-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 30px;
-    cursor: pointer;
-    border-radius: 30px;
-    margin-bottom: 20px;
-}
-
-.dropdown>a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: black;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a {
-    color: white;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown>a.navbuttons {
-    padding-top: 12px;
-    margin-right: 18px;
-}
-
-
-</style>
 </head>
 
 <body>
@@ -239,7 +17,7 @@ footer {
     <header>
 
     </header>
-    <?php
+    <?html
 
     if (isset($_SESSION['name'])) {
         // User is logged in
@@ -250,23 +28,31 @@ footer {
         <ul class="nav">
             <img class="logo" src="Pics/Logo.webp">
             <li class="home"><a class="active" href="">الرئيسية</a></li>
-            <li class="navbuttons"><a href="News/News.php">الأخبار</a></li>
-            <li class="navbuttons"><a href="About/About.php">برامجنا</a></li>
-            <li class="navbuttons li-right"><a href="Contact Us/Contact Us.php">تواصل معنا</a></li>
-            <li class="navbuttons dropdown">
-            <li class="dropdown">
+            <li class="navbuttons"><a href="Us/Us.html">من نحن</a></li>
+            <li class="navbuttons"><a href="Activites/Activites.html">برامجنا</a></li>
+            <li class="dropdown navbuttons">
+                <a class="">أخبار ومواضيع</a>
+                <div class="dropdown-content news">
+                    <a href="Global News/Global News.html">أخبار عالمية</a>
+                    <a href="Local News/Local News.html">أخبار محلية</a>
+                    <a href="Astronomy Topics/Astronomy Topics.html">أخبار علوم فضاء وفلك</a>
+                    <a href="Data Base/Data Base.html">قواعد بيانات</a>
+                </div>
+            </li>
+            <li class="navbuttons"><a href="Contact Us/Contact Us.html">تواصل معنا</a></li>
+            <li class="dropdown navbuttons acc">
                 <a class="navbuttons">
                     <p class="w3-padding-large w3-hide-small w3-right w3-username">
-                        <?php echo $username; ?>
+                        <?html echo $username; ?>
                     </p>
                 </a>
                 <div class="dropdown-content">
-                    <a href="User/Profile/Profile.php">الملف الشخصي</a>
-                    <a href="Log Out/Log Out.php">تسجيل خروج</a>
+                    <a href="User/Profile/Profile.html">الملف الشخصي</a>
+                    <a href="Log Out/Log Out.html">تسجيل خروج</a>
                 </div>
             </li>
         </ul>
-        <?php
+        <?html
     } else {
         // User is not logged in
         ?>
@@ -274,19 +60,27 @@ footer {
         <ul class="nav">
             <img class="logo" src="Pics/Logo.webp">
             <li class="home"><a class="active" href="">الرئيسية</a></li>
-            <li class="navbuttons"><a href="News/News.php">الأخبار</a></li>
-            <li class="navbuttons"><a href="About/About.php">برامجنا</a></li>
-            <li class="navbuttons li-right"><a href="Contact Us/Contact Us.php">تواصل معنا</a></li>
-            <li class="navbuttons dropdown">
-            <li class="dropdown">
-                <a class="navbuttons">الحساب</a>
-                <div class="dropdown-content">
-                    <a href="Sign Up/Sign Up.php">تسجيل</a>
-                    <a href="Log In/Log In.php">دخول</a>
+            <li class="navbuttons"><a href="Us/Us.html">من نحن</a></li>
+            <li class="navbuttons"><a href="Activites/Activites.html">برامجنا</a></li>
+            <li class="dropdown navbuttons">
+                <a class="">أخبار ومواضيع</a>
+                <div class="dropdown-content news">
+                    <a href="Global News/Global News.html">أخبار عالمية</a>
+                    <a href="Local News/Local News.html">أخبار محلية</a>
+                    <a href="Astronomy Topics/Astronomy Topics.html">أخبار علوم فضاء وفلك</a>
+                    <a href="Data Base/Data Base.html">قواعد بيانات</a>
+                </div>
+            </li>
+            <li class="navbuttons"><a href="Contact Us/Contact Us.html">تواصل معنا</a></li>
+            <li class="dropdown navbuttons acc">
+                <a class="account">الحساب</a>
+                <div class="dropdown-content acc">
+                    <a href="Sign Up/Sign Up.html">تسجيل</a>
+                    <a href="Log In/Log In.html">دخول</a>
                 </div>
             </li>
         </ul>
-        <?php
+        <?html
     }
     ?>
 
@@ -302,8 +96,39 @@ footer {
 
         <p class="text-beside-moonphase" style="color: white;">نحن مؤسسة مختصة في علوم الفضاء مقرها الأردن رؤيتنا تشمل
             التعليم والبحث في مجال علوم الفضاء , الفلك , الكيمياء والفيزياء</p>
+        <div class="coupon">
+            <h1 class="event-title">!! الحدث القادم</h1>
+            <p class="event-title">رحلة رصد المجموعات النجمية</p>
+            <div class="countdown" id="countdown"></div>
+        </div>
     </div>
+    <!--Coup-->
 
+    <script>
+        // Set the date we're counting down to (replace with your event date)
+        const eventDate = new Date("2023-11-22T04:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance <= 0) {
+                // Event has ended
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "انتهى الحدث!";
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const mark = "5 JD";
+
+                // Display the countdown in Arabic
+                document.getElementById("countdown").innerHTML = `(${mark} تكلفة التذكرة) (${seconds} ثانية ) (${minutes} دقيقة) (${hours} ساعة) (${days} يوم)`;
+            }
+        }, 1000);
+    </script>
     <br><br><br>
 
 
@@ -323,41 +148,49 @@ footer {
     <div class="square-blocks-container">
         <div class="square-block">
             <br>
-            للعامة
+            <label class="leb">
+                للعامة
+            </label>
             <br><br><br>
             نقوم بتنظيم رحلات لرصد ومشاهدة سماء الأردن وما تحتويه من مجموعات نجمية وابراج بالإضافة الى اجسام الفضاء
             العميق ، حيث يكون موقع هذه الرحلات في موقعنا الرسمي بالقرب من قصر الحرانة و يمكننا أيضا تنظيم رحلات مشابهة
             في أي مكان في الأردن وعلى وجه الخصوص، المدارس والجامعات
             <button class="block-button"
-                onclick="window.location.href='About/Activites/Activites.php#Events';">المزيد</button>
+                onclick="window.location.href='About/Activites/Activites.html#Events';">المزيد</button>
         </div>
         <div class="square-block">
             <br>
-            للجامعات
+            <label class="leb">
+                للجامعات
+            </label>
             <br><br><br>
             يمكننا زيارة الجامعات لعمل محاضرات تثقيفية وتوعوية في مجال علوم الفضاء والفلك ، بالإضافة إلى إشراك طلبة
             الجامعات بالبرامج البحثية لدينا
             <button class="block-button"
-                onclick="window.location.href='About/Activites/Activites.php#Clubs';">المزيد</button>
+                onclick="window.location.href='About/Activites/Activites.html#Clubs';">المزيد</button>
         </div>
         <div class="square-block ">
             <br>
-            للمدارس
+            <label class="leb">
+                للمدارس
+            </label>
             <br><br><br>
 
             فريقنا جاهز للذهاب إلى أي مكان في الأردن لتقديم عروض تعليمية مليئة بالحماس والتشويق بدءًا من الأكشاك البسيطة
             وحتى القبة الفلكية المتنقلة والتي تعمل بتقنية 360 درجة بالإضافة الى المحاضرات وورش العمل
             <button class="block-button"
-                onclick="window.location.href='About/Activites/Activites.php#Clubs';">المزيد</button>
+                onclick="window.location.href='About/Activites/Activites.html#Clubs';">المزيد</button>
         </div>
         <div class="square-block">
             <br>
-            للباحثين
+            <label class="leb">
+                للباحثين
+            </label>
             <br><br><br>
             تعمل المؤسسة على اشراك الشباب الأردنين ببرامج بحثية في مجال علوم الفضاء والفلك بالتعاون مع مؤسسسات وجامعات
             عالمية مرموقة
             <button class="block-button"
-                onclick="window.location.href='About/Activites/Activites.php#Research';">المزيد</button>
+                onclick="window.location.href='About/Activites/Activites.html#Research';">المزيد</button>
         </div>
     </div>
 
