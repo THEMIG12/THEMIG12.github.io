@@ -1,0 +1,389 @@
+:root {
+    --accent-color: #10df6d;
+    --accent-hover: rgba(16, 223, 109, 0.3);
+    --dark-bg: #222;
+    --darker-bg: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1e1e1e;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #f0f0f0;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER STYLES */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    position: fixed;
+    padding: 0;
+    width: 100%;
+    top: 0;
+    border-bottom: 2px solid var(--accent-color);
+    z-index: 1000;
+    height: 70px;
+    backdrop-filter: blur(5px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-color);
+    margin-right: 15px;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+nav ul {
+    position: relative;
+    left: 23%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70px;
+    gap: 5vw;
+}
+
+nav ul li {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6em 1.2em;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent-hover);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+nav ul li a:hover:before,
+.dropdown:hover > a:before,
+.me-dropdown:hover .circle-button:not(.active):before {
+    width: 100%;
+}
+
+nav ul li a:hover,
+.dropdown:hover > a,
+.me-dropdown:hover .circle-button:not(.active) {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(16, 223, 109, 0.3);
+}
+
+/* DROPDOWN STYLES */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    width: 180px;
+    padding: 8px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.2s;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    border-radius: 30px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dropdown-content a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent-hover);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+}
+
+.dropdown-content a:hover:before {
+    width: 100%;
+}
+
+.dropdown-content a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(16, 223, 109, 0.3);
+}
+
+/* ACTIVE LINK */
+.active {
+    background-color: #10df6d94;
+}
+nav ul li a.active:before {
+    width: 100%;
+}
+
+.dropdown > a.active {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(16, 223, 109, 0.3);
+}
+.dropdown > a.active:before {
+    width: 100%;
+}
+
+/* ME BUTTON STYLES — FIXED VERSION */
+.me-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.circle-button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: default;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(16, 223, 109, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.circle-button:not(.active):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--accent-hover);
+    transition: height 0.3s ease;
+    z-index: -1;
+}
+
+.circle-button:not(.active):hover:before {
+    height: 100%;
+}
+
+.circle-button:not(.active):hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(16, 223, 109, 0.8);
+}
+
+.circle-button.active {
+    background-color: #10df6d94;
+    box-shadow: 0 0 15px rgba(16, 223, 109, 0.8);
+}
+.circle-button.active:before {
+    width: 0;
+    transition: none;
+}
+.circle-button.active:hover {
+    transform: scale(1.1);
+}
+
+.circle-button-text {
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.me-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: -180%;
+    width: 180px;
+    padding: 8px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.2s;
+    z-index: 1001;
+}
+
+/* Show menu */
+.me-dropdown:hover .me-menu,
+.me-menu:hover {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+/* Fixed: only one scale effect whether hovering button or menu */
+.me-dropdown:hover .circle-button,
+.me-menu:hover ~ .circle-button {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(16, 223, 109, 0.8);
+}
+.me-dropdown:hover .circle-button:not(.active):before,
+.me-menu:hover ~ .circle-button:not(.active):before {
+    height: 100%;
+}
+
+/* Menu items */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    border-radius: 30px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.menu-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent-hover);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.menu-item:hover:before {
+    width: 100%;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(16, 223, 109, 0.3);
+}
+
+.menu-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* CHAT CIRCLE */
+.chat-circle {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--darker-bg);
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(16, 223, 109, 0.6);
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.chat-circle:hover {
+    background-color: rgba(42, 124, 90, 0.7);
+    box-shadow: 0 0 25px rgba(16, 223, 109, 0.9);
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 1.85%;
+    z-index: 1000;
+    width: 100%;
+    border-top: 2px solid var(--accent-color);
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
