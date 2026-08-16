@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خريطة الأردن | أثر الأردن</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, system-ui, sans-serif;
+        background: #fcf7f0;
+        color: #1e2a3a;
+        line-height: 1.7;
+        padding: 0 16px;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 0 40px;
+      }
+
+      .top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0 8px;
+        border-bottom: 2px solid #d9c8b2;
+        margin-bottom: 24px;
+      }
+      .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo-icon {
+        font-size: 2rem;
+        color: #8b5a2b;
+      }
+      .logo-text {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #3d2b1a;
+      }
+      .logo-text span {
+        color: #b87c4b;
+      }
+      .lang-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        font-size: 0.95rem;
+      }
+      .lang-actions a {
+        text-decoration: none;
+        color: #2b3a4a;
+        font-weight: 500;
+        padding: 4px 8px;
+        border-radius: 20px;
+        transition: 0.2s;
+      }
+      .lang-actions a:hover {
+        background: #e5d5c4;
+      }
+      .lang-actions .active-lang {
+        background: #8b5a2b;
+        color: white;
+        padding: 4px 14px;
+        border-radius: 30px;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 10px;
+        width: 100%;
+        border-top: 1px solid #e0d3c6;
+        padding-top: 14px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #1e2a3a;
+        font-weight: 500;
+        transition: 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-links a i {
+        color: #8b5a2b;
+      }
+      .nav-links a:hover {
+        color: #8b5a2b;
+      }
+      .nav-links a.active {
+        color: #8b5a2b;
+        font-weight: 700;
+        border-bottom: 3px solid #8b5a2b;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #8b5a2b;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background: #f0e8e0;
+        border-radius: 40px;
+        transition: 0.3s;
+      }
+      .back-button:hover {
+        background: #e0d3c6;
+        transform: translateX(-5px);
+      }
+
+      .page-hero {
+        background: linear-gradient(135deg, #dccfc2, #cbb9a6);
+        padding: 40px;
+        border-radius: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .page-hero h1 {
+        font-size: 2.8rem;
+        color: #2f2419;
+      }
+      .page-hero .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        margin-top: 8px;
+      }
+
+      /* Interactive Map */
+      .map-container {
+        background: white;
+        border-radius: 24px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border: 1px solid #eee6dd;
+        position: relative;
+      }
+      .map-container h2 {
+        font-size: 1.8rem;
+        color: #2f2419;
+        margin-bottom: 20px;
+        border-right: 5px solid #b87c4b;
+        padding-right: 15px;
+      }
+      .map-container h2 i {
+        color: #8b5a2b;
+        margin-left: 10px;
+      }
+
+      .map-svg-placeholder {
+        background: #e8dccc;
+        border-radius: 16px;
+        padding: 40px;
+        text-align: center;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border: 2px dashed #b87c4b;
+      }
+      .map-svg-placeholder i {
+        font-size: 5rem;
+        color: #8b5a2b;
+        margin-bottom: 16px;
+      }
+      .map-svg-placeholder .map-note {
+        font-size: 1.1rem;
+        color: #5f3f24;
+      }
+
+      /* Governorates Grid on Map */
+      .gov-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .gov-item {
+        background: #f8f3ed;
+        padding: 16px;
+        border-radius: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 2px solid transparent;
+        text-decoration: none;
+        color: #1e2a3a;
+      }
+      .gov-item:hover {
+        border-color: #8b5a2b;
+        transform: translateY(-4px);
+        background: #f0e8e0;
+      }
+      .gov-item i {
+        font-size: 2.2rem;
+        color: #8b5a2b;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .gov-item .gov-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .gov-item .gov-desc {
+        font-size: 0.85rem;
+        opacity: 0.7;
+      }
+
+      /* Regions List */
+      .region-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .region-card {
+        background: #f8f3ed;
+        padding: 20px;
+        border-radius: 16px;
+        transition: 0.3s;
+        border-right: 4px solid #b87c4b;
+      }
+      .region-card:hover {
+        background: #f0e8e0;
+        transform: translateX(-4px);
+      }
+      .region-card h4 {
+        color: #2f2419;
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+      }
+      .region-card h4 i {
+        color: #8b5a2b;
+        margin-left: 8px;
+      }
+      .region-card p {
+        font-size: 0.95rem;
+        color: #4d3f32;
+      }
+      .region-card .region-tag {
+        display: inline-block;
+        background: #e0d3c6;
+        padding: 2px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-top: 8px;
+      }
+
+      @media (max-width: 700px) {
+        .page-hero {
+          padding: 25px;
+        }
+        .page-hero h1 {
+          font-size: 2rem;
+        }
+        .top-bar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .lang-actions {
+          justify-content: flex-start;
+          flex-wrap: wrap;
+        }
+        .nav-links {
+          justify-content: center;
+        }
+        .map-svg-placeholder {
+          min-height: 250px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="top-bar">
+        <div class="logo-area">
+          <i class="fas fa-landmark logo-icon"></i>
+          <div class="logo-text">أثر <span>الأردن</span></div>
+        </div>
+        <div class="lang-actions">
+          <a href="#" class="active-lang"><i class="fas fa-globe"></i> عربي</a>
+          <a href="#">English</a>
+          <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
+          <a href="stories.html"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
+          <a href="map.html"><i class="fas fa-map"></i> خريطة الأردن</a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          <a href="map.html" class="active"
+            ><i class="fas fa-map"></i> خريطة الأردن</a
+          >
+          <a href="stories.html"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
+          <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
+          <a href="#"><i class="fas fa-photo-video"></i> أرشيف الصور</a>
+          <a href="#"><i class="fas fa-microphone-alt"></i> مقابلات</a>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <div class="page-hero">
+        <h1><i class="fas fa-map"></i> خريطة الأردن</h1>
+        <div class="subtitle">
+          استكشف المواقع الأثرية والسياحية في جميع محافظات الأردن
+        </div>
+      </div>
+
+      <!-- Interactive Map -->
+      <div class="map-container">
+        <h2><i class="fas fa-globe-asia"></i> خريطة تفاعلية للمواقع الأثرية</h2>
+        <div class="map-svg-placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <div class="map-note">
+            <strong>خريطة الأردن التفاعلية</strong>
+            <p style="margin-top: 8px; font-size: 0.95rem">
+              انقر على أي محافظة لاستكشاف معالمها الأثرية والسياحية
+            </p>
+            <div
+              style="
+                margin-top: 16px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+              "
+            >
+              <span
+                style="
+                  background: #8b5a2b;
+                  color: white;
+                  padding: 6px 16px;
+                  border-radius: 20px;
+                  font-size: 0.8rem;
+                "
+              >
+                <i class="fas fa-circle" style="color: #f5b342"></i> مواقع أثرية
+              </span>
+              <span
+                style="
+                  background: #8b5a2b;
+                  color: white;
+                  padding: 6px 16px;
+                  border-radius: 20px;
+                  font-size: 0.8rem;
+                "
+              >
+                <i class="fas fa-circle" style="color: #4caf50"></i> محميات
+                طبيعية
+              </span>
+              <span
+                style="
+                  background: #8b5a2b;
+                  color: white;
+                  padding: 6px 16px;
+                  border-radius: 20px;
+                  font-size: 0.8rem;
+                "
+              >
+                <i class="fas fa-circle" style="color: #2196f3"></i> مدن رئيسية
+              </span>
+            </div>
+          </div>
+          <!-- Note: In production, you'd embed an actual interactive map here -->
+        </div>
+      </div>
+
+      <!-- Governorates Grid -->
+      <div class="map-container">
+        <h2><i class="fas fa-flag"></i> محافظات الأردن</h2>
+        <div class="gov-grid">
+          <a href="amman.html" class="gov-item">
+            <i class="fas fa-city"></i>
+            <div class="gov-name">عمّان</div>
+            <div class="gov-desc">العاصمة - 12 موقع أثري</div>
+          </a>
+          <a href="jerash.html" class="gov-item">
+            <i class="fas fa-columns"></i>
+            <div class="gov-name">جرش</div>
+            <div class="gov-desc">مدينة الأعمدة - 8 مواقع</div>
+          </a>
+          <a href="irbid.html" class="gov-item">
+            <i class="fas fa-tree"></i>
+            <div class="gov-name">إربد</div>
+            <div class="gov-desc">شمال الأردن - 6 مواقع</div>
+          </a>
+          <div
+            class="gov-item"
+            onclick="alert('سيتم إضافة المزيد من المحافظات قريباً!')"
+          >
+            <i class="fas fa-mountain"></i>
+            <div class="gov-name">البلقاء</div>
+            <div class="gov-desc">وسط الأردن - 5 مواقع</div>
+          </div>
+          <div
+            class="gov-item"
+            onclick="alert('سيتم إضافة المزيد من المحافظات قريباً!')"
+          >
+            <i class="fas fa-desert"></i>
+            <div class="gov-name">معان</div>
+            <div class="gov-desc">جنوب الأردن - البتراء</div>
+          </div>
+          <div
+            class="gov-item"
+            onclick="alert('سيتم إضافة المزيد من المحافظات قريباً!')"
+          >
+            <i class="fas fa-water"></i>
+            <div class="gov-name">العقبة</div>
+            <div class="gov-desc">البحر الأحمر - 4 مواقع</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Regions -->
+      <div class="map-container">
+        <h2><i class="fas fa-map-pin"></i> أبرز المواقع الأثرية حسب المنطقة</h2>
+        <div class="region-list">
+          <div class="region-card">
+            <h4><i class="fas fa-landmark"></i> جرش</h4>
+            <p>المسرح الجنوبي، الساحة الأكتاغونية، معبد زيوس، الشارع المقنطر</p>
+            <span class="region-tag"
+              ><i class="fas fa-clock"></i> روماني - بيزنطي</span
+            >
+          </div>
+          <div class="region-card">
+            <h4><i class="fas fa-landmark"></i> عمّان</h4>
+            <p>جبل القلعة، المدرج الروماني، معبد هرقل، نبع عين غزال</p>
+            <span class="region-tag"
+              ><i class="fas fa-clock"></i> عمّوني - روماني - إسلامي</span
+            >
+          </div>
+          <div class="region-card">
+            <h4><i class="fas fa-landmark"></i> إربد</h4>
+            <p>تل إربد، أم قيس، قلعة إربد، الكنائس البيزنطية</p>
+            <span class="region-tag"
+              ><i class="fas fa-clock"></i> يوناني - روماني - بيزنطي</span
+            >
+          </div>
+          <div class="region-card">
+            <h4><i class="fas fa-landmark"></i> البتراء</h4>
+            <p>الخزانة، الدير، المدرج، المقابر الملكية، شارع الواجهات</p>
+            <span class="region-tag"
+              ><i class="fas fa-clock"></i> أنباط - روماني</span
+            >
+          </div>
+          <div class="region-card">
+            <h4><i class="fas fa-landmark"></i> وادي رم</h4>
+            <p>الرسوم الصخرية، الجبال الحمراء، وادي الرم، آثار الأنباط</p>
+            <span class="region-tag"
+              ><i class="fas fa-clock"></i> أنباط - إسلامي</span
+            >
+          </div>
+          <div class="region-card">
+            <h4><i class="fas fa-landmark"></i> مادبا</h4>
+            <p>خريطة مادبا الفسيفسائية، كنيسة الرسل، جبل نيبو</p>
+            <span class="region-tag"
+              ><i class="fas fa-clock"></i> بيزنطي - إسلامي</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Use -->
+      <div class="map-container">
+        <h2><i class="fas fa-question-circle"></i> كيف تستخدم الخريطة</h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+          "
+        >
+          <div
+            style="
+              background: #f8f3ed;
+              padding: 20px;
+              border-radius: 16px;
+              text-align: center;
+            "
+          >
+            <i
+              class="fas fa-search"
+              style="font-size: 2rem; color: #8b5a2b"
+            ></i>
+            <h4 style="margin: 8px 0">1. ابحث</h4>
+            <p style="font-size: 0.9rem">
+              ابحث عن موقع أثري أو محافظة باستخدام مربع البحث
+            </p>
+          </div>
+          <div
+            style="
+              background: #f8f3ed;
+              padding: 20px;
+              border-radius: 16px;
+              text-align: center;
+            "
+          >
+            <i
+              class="fas fa-hand-pointer"
+              style="font-size: 2rem; color: #8b5a2b"
+            ></i>
+            <h4 style="margin: 8px 0">2. اختر</h4>
+            <p style="font-size: 0.9rem">
+              انقر على المحافظة التي تريد استكشافها من الخريطة
+            </p>
+          </div>
+          <div
+            style="
+              background: #f8f3ed;
+              padding: 20px;
+              border-radius: 16px;
+              text-align: center;
+            "
+          >
+            <i
+              class="fas fa-book-open"
+              style="font-size: 2rem; color: #8b5a2b"
+            ></i>
+            <h4 style="margin: 8px 0">3. استكشف</h4>
+            <p style="font-size: 0.9rem">
+              تصفح الصور والقصص والتقارير والمعلومات التاريخية
+            </p>
+          </div>
+          <div
+            style="
+              background: #f8f3ed;
+              padding: 20px;
+              border-radius: 16px;
+              text-align: center;
+            "
+          >
+            <i
+              class="fas fa-upload"
+              style="font-size: 2rem; color: #8b5a2b"
+            ></i>
+            <h4 style="margin: 8px 0">4. شارك</h4>
+            <p style="font-size: 0.9rem">أضف صورك وقصصك وتجاربك عن المكان</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div
+        style="
+          text-align: center;
+          margin-top: 40px;
+          padding-top: 20px;
+          border-top: 1px solid #ddd;
+          font-size: 0.85rem;
+          opacity: 0.6;
+        "
+      >
+        <i class="fas fa-copyright"></i> 2026 أثر الأردن — نوثائق المكان ونحفظ
+        الحكاية
+      </div>
+    </div>
+  </body>
+</html>

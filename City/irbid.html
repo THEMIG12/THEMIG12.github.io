@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إربد | أثر الأردن</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, system-ui, sans-serif;
+        background: #fcf7f0;
+        color: #1e2a3a;
+        line-height: 1.7;
+        padding: 0 16px;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 0 40px;
+      }
+
+      .top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0 8px;
+        border-bottom: 2px solid #d9c8b2;
+        margin-bottom: 24px;
+      }
+      .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo-icon {
+        font-size: 2rem;
+        color: #8b5a2b;
+      }
+      .logo-text {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #3d2b1a;
+      }
+      .logo-text span {
+        color: #b87c4b;
+      }
+      .lang-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        font-size: 0.95rem;
+      }
+      .lang-actions a {
+        text-decoration: none;
+        color: #2b3a4a;
+        font-weight: 500;
+        padding: 4px 8px;
+        border-radius: 20px;
+        transition: 0.2s;
+      }
+      .lang-actions a:hover {
+        background: #e5d5c4;
+      }
+      .lang-actions .active-lang {
+        background: #8b5a2b;
+        color: white;
+        padding: 4px 14px;
+        border-radius: 30px;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 10px;
+        width: 100%;
+        border-top: 1px solid #e0d3c6;
+        padding-top: 14px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #1e2a3a;
+        font-weight: 500;
+        transition: 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-links a i {
+        color: #8b5a2b;
+      }
+      .nav-links a:hover {
+        color: #8b5a2b;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #8b5a2b;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background: #f0e8e0;
+        border-radius: 40px;
+        transition: 0.3s;
+      }
+      .back-button:hover {
+        background: #e0d3c6;
+        transform: translateX(-5px);
+      }
+
+      .hero-page {
+        background: linear-gradient(135deg, #dccfc2, #cbb9a6);
+        padding: 40px;
+        border-radius: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-page h1 {
+        font-size: 3rem;
+        color: #2f2419;
+        margin-bottom: 10px;
+      }
+      .hero-page .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        margin-bottom: 15px;
+      }
+      .hero-page .quick-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+      }
+      .hero-page .quick-stats span {
+        background: rgba(255, 255, 255, 0.3);
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-weight: 500;
+      }
+      .hero-page .quick-stats i {
+        margin-left: 8px;
+      }
+
+      .section-block {
+        background: white;
+        border-radius: 24px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        border: 1px solid #eee6dd;
+      }
+      .section-block h2 {
+        font-size: 1.8rem;
+        color: #2f2419;
+        margin-bottom: 20px;
+        border-right: 5px solid #b87c4b;
+        padding-right: 15px;
+      }
+      .section-block h2 i {
+        color: #8b5a2b;
+        margin-left: 10px;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .info-card {
+        background: #f8f3ed;
+        padding: 20px;
+        border-radius: 16px;
+        transition: 0.3s;
+      }
+      .info-card:hover {
+        background: #f0e8e0;
+        transform: translateY(-3px);
+      }
+      .info-card i {
+        font-size: 2rem;
+        color: #8b5a2b;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .info-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: #2f2419;
+      }
+      .info-card p {
+        font-size: 0.95rem;
+        color: #4d3f32;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+      .gallery-item {
+        background: #e8dccc;
+        height: 150px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: #5f3f24;
+        transition: 0.3s;
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+      .gallery-item:hover {
+        border-color: #8b5a2b;
+        transform: scale(1.02);
+      }
+      .gallery-item .label {
+        font-size: 0.8rem;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-top: 60px;
+      }
+
+      .story-item {
+        background: #f8f3ed;
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        border-right: 4px solid #b87c4b;
+      }
+      .story-item .story-author {
+        font-weight: 600;
+        color: #8b5a2b;
+        margin-top: 10px;
+      }
+      .story-item .story-author i {
+        margin-left: 6px;
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .video-item {
+        background: #2f2419;
+        border-radius: 16px;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .video-item:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+      }
+      .video-item i {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .video-item .vid-label {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .upload-area {
+        border: 3px dashed #d9c8b2;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        background: #faf6f0;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .upload-area:hover {
+        background: #f5efe9;
+        border-color: #8b5a2b;
+      }
+      .upload-area i {
+        font-size: 3rem;
+        color: #8b5a2b;
+        margin-bottom: 10px;
+      }
+
+      .review-item {
+        background: #f8f3ed;
+        padding: 16px 20px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+      }
+      .review-item .stars {
+        color: #f5b342;
+      }
+      .review-item .review-author {
+        font-weight: 600;
+        margin-top: 6px;
+        color: #8b5a2b;
+      }
+
+      @media (max-width: 700px) {
+        .hero-page {
+          padding: 25px;
+        }
+        .hero-page h1 {
+          font-size: 2.2rem;
+        }
+        .top-bar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .lang-actions {
+          justify-content: flex-start;
+          flex-wrap: wrap;
+        }
+        .nav-links {
+          justify-content: center;
+        }
+        .section-block {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo-area">
+          <i class="fas fa-landmark logo-icon"></i>
+          <div class="logo-text">أثر <span>الأردن</span></div>
+        </div>
+        <div class="lang-actions">
+          <a href="#" class="active-lang"><i class="fas fa-globe"></i> عربي</a>
+          <a href="#">English</a>
+          <a href="#"><i class="fas fa-envelope"></i> تواصل معنا</a>
+          <a href="#"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
+          <a href="#"><i class="fas fa-map"></i> خريطة الأردن</a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          <a href="#"><i class="fas fa-photo-video"></i> أرشيف الصور</a>
+          <a href="#"><i class="fas fa-microphone-alt"></i> مقابلات</a>
+          <a href="#"><i class="fas fa-users"></i> شارك بتجربتك</a>
+          <a href="#"><i class="fas fa-newspaper"></i> تقارير صحفية</a>
+          <a href="#"><i class="fas fa-map-pin"></i> المواقع</a>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-button"
+        ><i class="fas fa-arrow-right"></i> العودة للرئيسية</a
+      >
+
+      <div class="hero-page">
+        <h1>🌿 محافظة إربد</h1>
+        <div class="subtitle">الأصالة و التراث في كل زاوية</div>
+        <div class="quick-stats">
+          <span><i class="fas fa-flag"></i> 4 حضارات</span>
+          <span><i class="fas fa-camera"></i> 156 صورة</span>
+          <span><i class="fas fa-video"></i> 19 تقريراً</span>
+          <span><i class="fas fa-star"></i> 4.7/5 تقييم</span>
+        </div>
+      </div>
+
+      <!-- 1. LOCATION -->
+      <div class="section-block">
+        <h2><i class="fas fa-map-pin"></i> الموقع ومعلومات الوصول</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-map-marked-alt"></i>
+            <h4>الموقع الجغرافي</h4>
+            <p>
+              تقع إربد في شمال الأردن، على بعد حوالي 70 كم شمال عمّان، وتطل على
+              سهل حوران الخصب الذي يمتد إلى سوريا.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-road"></i>
+            <h4>كيف تصل إليها</h4>
+            <p>
+              يمكن الوصول عبر طريق عمّان - إربد السريع (حوالي ساعة بالسيارة).
+              تتوفر حافلات من مجمع الشمال في عمّان.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h4>أفضل أوقات الزيارة</h4>
+            <p>
+              الربيع هو أفضل موسم لزيارة إربد، حيث تزدهر الطبيعة وتكون الأجواء
+              معتدلة ومناسبة للاستكشاف.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. HISTORY -->
+      <div class="section-block">
+        <h2><i class="fas fa-history"></i> التاريخ والنشأة</h2>
+        <p style="font-size: 1.05rem; margin-bottom: 16px">
+          إربد، المعروفة قديماً بـ"أربيلا"، هي مدينة ذات تاريخ طويل يمتد لآلاف
+          السنين، وكانت مركزاً مهماً في العصرين اليوناني والروماني.
+        </p>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h4>النشأة</h4>
+            <p>
+              تعود أصول إربد إلى العصر البرونزي، وكانت تُعرف بـ"تل إربد" حيث عثر
+              على آثار تعود للألفية الثالثة قبل الميلاد.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-crown"></i>
+            <h4>العصر اليوناني</h4>
+            <p>
+              في العصر الهلنستي، أصبحت إربد مدينة يونانية مهمة، وازدهرت كمركز
+              تجاري وثقافي.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-church"></i>
+            <h4>العصر البيزنطي</h4>
+            <p>
+              شهدت إربد ازدهاراً مسيحياً، وبُنيت فيها العديد من الكنائس والأديرة
+              التي تعكس التاريخ المسيحي للمنطقة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. CIVILIZATIONS -->
+      <div class="section-block">
+        <h2><i class="fas fa-people-arrows"></i> الحضارات والشعوب</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>العصر البرونزي</h4>
+            <p>
+              المستوطنات الأولى على تل إربد، حيث عُثر على أواني فخارية وأدوات
+              تعود إلى 3000 ق.م.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>العصر الحديدي</h4>
+            <p>
+              كانت إربد جزءاً من مملكة إسرائيل ثم آشور، وشهدت ازدهاراً في
+              الزراعة والتجارة.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>العصر اليوناني-الروماني</h4>
+            <p>
+              أهم فترة في تاريخ إربد، حيث أصبحت مدينة يونانية ثم رومانية مزدهرة.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>العصر الإسلامي</h4>
+            <p>
+              استمرت إربد مزدهرة في العصور الإسلامية، وشهدت نهضة زراعية وتجارية
+              في العصر المملوكي والعثماني.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. STORIES -->
+      <div class="section-block">
+        <h2><i class="fas fa-user-tie"></i> قصص السكان وكبار السن</h2>
+        <div class="story-item">
+          <p>
+            "كانت أمي تقول إن إربد كانت تُعرف بـ'مدينة الزيتون'، لأن بساتين
+            الزيتون كانت تغطي كل التلال المحيطة بها."
+          </p>
+          <div class="story-author">
+            <i class="fas fa-user"></i> الحاج أبو خالد، 80 عاماً، من عشائر إربد
+          </div>
+        </div>
+        <div class="story-item">
+          <p>
+            "أتذكر أيام الحصاد في سهل حوران، حيث كانت كل العائلات تخرج لجني
+            القمح، وكانت أياماً مليئة بالفرح والأغاني."
+          </p>
+          <div class="story-author">
+            <i class="fas fa-user"></i> أم يوسف، 72 عاماً، من إربد
+          </div>
+        </div>
+        <div class="story-item">
+          <p>
+            "كان جدي يروي لنا عن قوافل التجار التي كانت تمر عبر إربد، محملة
+            بالبضائع من الشام والعراق ومصر."
+          </p>
+          <div class="story-author">
+            <i class="fas fa-user"></i> أبو سامر، 58 عاماً، تاجر من إربد
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. GALLERY -->
+      <div class="section-block">
+        <h2><i class="fas fa-images"></i> صور قديمة وحديثة</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">تل إربد - 1940</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">سوق إربد القديم - 1960</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">بساتين الزيتون - 1975</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">إربد الحديثة - 2020</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">جامعة إربد - 2000</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">إربد اليوم - 2024</span>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 16px">
+          <span
+            style="
+              background: #f0e8e0;
+              padding: 8px 20px;
+              border-radius: 30px;
+              display: inline-block;
+              font-size: 0.9rem;
+            "
+          >
+            <i class="fas fa-upload"></i> شارك صورك عن إربد
+          </span>
+        </div>
+      </div>
+
+      <!-- 6. VIDEOS -->
+      <div class="section-block">
+        <h2><i class="fas fa-video"></i> فيديوهات وتقارير مصورة</h2>
+        <div class="video-grid">
+          <div class="video-item">
+            <i class="fas fa-play-circle"></i>
+            <div class="vid-label">تقرير: إربد عبر التاريخ</div>
+            <div style="font-size: 0.8rem; opacity: 0.7">▶️ 16 دقيقة</div>
+          </div>
+          <div class="video-item">
+            <i class="fas fa-play-circle"></i>
+            <div class="vid-label">جولة في أسواق إربد القديمة</div>
+            <div style="font-size: 0.8rem; opacity: 0.7">▶️ 9 دقائق</div>
+          </div>
+          <div class="video-item">
+            <i class="fas fa-play-circle"></i>
+            <div class="vid-label">إربد: مدينة الزيتون والتراث</div>
+            <div style="font-size: 0.8rem; opacity: 0.7">▶️ 13 دقيقة</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. INTERVIEWS -->
+      <div class="section-block">
+        <h2><i class="fas fa-microphone-alt"></i> مقابلات مع مؤرخين وباحثين</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-user-graduate"></i>
+            <h4>د. رامي العزام - مؤرخ آثار</h4>
+            <p>
+              "إربد هي بوابة الأردن الشمالية، وهي منطقة غنية بالآثار التي تروي
+              قصة التفاعل بين حضارات الشرق والغرب."
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-user-graduate"></i>
+            <h4>أ. ليلى الشمايلة - باحثة تراث</h4>
+            <p>
+              "التراث الشعبي في إربد غني بالقصص والأغاني والحكايات التي تتناقلها
+              الأجيال، وهي جزء من هويتنا."
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-user-tie"></i>
+            <h4>الحاج أبو زيد - من سكان إربد</h4>
+            <p>
+              "إربد هي أرض الخير والبركة، وجبالها ووديانها تحمل ذكريات طفولتنا
+              وشبابنا."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. NEWS -->
+      <div class="section-block">
+        <h2><i class="fas fa-newspaper"></i> قصص وتقارير صحفية</h2>
+        <div class="story-item" style="border-right-color: #2f2419">
+          <h4 style="color: #8b5a2b">
+            "اكتشاف كنيسة بيزنطية في إربد تعود للقرن السادس الميلادي"
+          </h4>
+          <p>
+            بعثة أثرية أردنية تكتشف كنيسة بيزنطية مزينة بفسيفساء في منطقة الحصن
+            بإربد.
+          </p>
+          <div style="color: #6d5a48; font-size: 0.85rem">
+            📰 الغد - 5 سبتمبر 2025
+          </div>
+        </div>
+        <div class="story-item" style="border-right-color: #2f2419">
+          <h4 style="color: #8b5a2b">
+            "مهرجان إربد للتراث: احتفال بالأصالة والتراث"
+          </h4>
+          <p>
+            تغطية خاصة لمهرجان إربد السنوي الذي يحيي التراث الشعبي والفلكلور
+            الأردني.
+          </p>
+          <div style="color: #6d5a48; font-size: 0.85rem">
+            📰 الرأي - 20 أكتوبر 2025
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. MAP -->
+      <div class="section-block">
+        <h2><i class="fas fa-map-marked-alt"></i> موقع المكان على الخريطة</h2>
+        <div
+          style="
+            background: #e0d3c6;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            color: #2f2419;
+          "
+        >
+          <i
+            class="fas fa-map"
+            style="font-size: 4rem; display: block; margin-bottom: 12px"
+          ></i>
+          <p style="font-size: 1.1rem">📍 إربد، محافظة إربد، الأردن</p>
+          <p style="font-size: 0.9rem; opacity: 0.7">
+            إحداثيات: 32.5556° N, 35.8500° E
+          </p>
+          <div
+            style="
+              background: white;
+              border-radius: 12px;
+              padding: 12px;
+              margin-top: 12px;
+            "
+          >
+            <i class="fas fa-location-dot" style="color: #8b5a2b"></i>
+            <a href="#" style="color: #8b5a2b; text-decoration: none"
+              >فتح في خرائط جوجل</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. REVIEWS -->
+      <div class="section-block">
+        <h2><i class="fas fa-star"></i> تجارب الزوار والسياح</h2>
+        <div class="review-item">
+          <div class="stars">★★★★★</div>
+          <p>
+            "إربد مدينة جميلة وهادئة، أهلها طيبون وكريمون. زرت سوقها القديم
+            واستمتعت بالطابع التراثي."
+          </p>
+          <div class="review-author">نور من الإمارات - زيارة مارس 2025</div>
+        </div>
+        <div class="review-item">
+          <div class="stars">★★★★☆</div>
+          <p>
+            "منطقة جميلة، لكنها تحتاج إلى مزيد من الاهتمام بالمعالم الأثرية.
+            الطبيعة فيها خلابة."
+          </p>
+          <div class="review-author">يوسف من سوريا - زيارة أبريل 2025</div>
+        </div>
+        <div class="review-item">
+          <div class="stars">★★★★★</div>
+          <p>
+            "قضيت وقتاً رائعاً في إربد، تعرفت على تاريخها العريق واستمتعت بضيافة
+            أهلها. أنصح بزيارة تل إربد."
+          </p>
+          <div class="review-author">Layla من كندا - زيارة مايو 2025</div>
+        </div>
+      </div>
+
+      <!-- 11. UPLOAD -->
+      <div class="section-block">
+        <h2><i class="fas fa-upload"></i> شارك بتجربتك في إربد</h2>
+        <div class="upload-area">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <h3 style="color: #2f2419">ارفع صورتك أو قصتك عن إربد</h3>
+          <p style="color: #6d5a48">
+            انقر أو اسحب ملفاتك هنا لتشارك ذاكرتك عن إربد مع الجميع
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              justify-content: center;
+              flex-wrap: wrap;
+              margin-top: 12px;
+            "
+          >
+            <span
+              style="
+                background: #8b5a2b;
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                font-size: 0.9rem;
+              "
+            >
+              <i class="fas fa-image"></i> صور
+            </span>
+            <span
+              style="
+                background: #8b5a2b;
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                font-size: 0.9rem;
+              "
+            >
+              <i class="fas fa-pen-fancy"></i> قصة
+            </span>
+            <span
+              style="
+                background: #8b5a2b;
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                font-size: 0.9rem;
+              "
+            >
+              <i class="fas fa-info-circle"></i> معلومات
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 40px;
+          padding-top: 20px;
+          border-top: 1px solid #ddd;
+          font-size: 0.85rem;
+          opacity: 0.6;
+        "
+      >
+        <i class="fas fa-copyright"></i> 2026 أثر الأردن — نوثائق المكان ونحفظ
+        الحكاية
+      </div>
+    </div>
+  </body>
+</html>

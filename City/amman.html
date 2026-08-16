@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عمّان | أثر الأردن</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, system-ui, sans-serif;
+        background: #fcf7f0;
+        color: #1e2a3a;
+        line-height: 1.7;
+        padding: 0 16px;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 0 40px;
+      }
+
+      .top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0 8px;
+        border-bottom: 2px solid #d9c8b2;
+        margin-bottom: 24px;
+      }
+      .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo-icon {
+        font-size: 2rem;
+        color: #8b5a2b;
+      }
+      .logo-text {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #3d2b1a;
+      }
+      .logo-text span {
+        color: #b87c4b;
+      }
+      .lang-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        font-size: 0.95rem;
+      }
+      .lang-actions a {
+        text-decoration: none;
+        color: #2b3a4a;
+        font-weight: 500;
+        padding: 4px 8px;
+        border-radius: 20px;
+        transition: 0.2s;
+      }
+      .lang-actions a:hover {
+        background: #e5d5c4;
+      }
+      .lang-actions .active-lang {
+        background: #8b5a2b;
+        color: white;
+        padding: 4px 14px;
+        border-radius: 30px;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 10px;
+        width: 100%;
+        border-top: 1px solid #e0d3c6;
+        padding-top: 14px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #1e2a3a;
+        font-weight: 500;
+        transition: 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-links a i {
+        color: #8b5a2b;
+      }
+      .nav-links a:hover {
+        color: #8b5a2b;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #8b5a2b;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background: #f0e8e0;
+        border-radius: 40px;
+        transition: 0.3s;
+      }
+      .back-button:hover {
+        background: #e0d3c6;
+        transform: translateX(-5px);
+      }
+
+      .hero-page {
+        background: linear-gradient(135deg, #dccfc2, #cbb9a6);
+        padding: 40px;
+        border-radius: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-page h1 {
+        font-size: 3rem;
+        color: #2f2419;
+        margin-bottom: 10px;
+      }
+      .hero-page .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        margin-bottom: 15px;
+      }
+      .hero-page .quick-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 20px;
+      }
+      .hero-page .quick-stats span {
+        background: rgba(255, 255, 255, 0.3);
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-weight: 500;
+      }
+      .hero-page .quick-stats i {
+        margin-left: 8px;
+      }
+
+      .section-block {
+        background: white;
+        border-radius: 24px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        border: 1px solid #eee6dd;
+      }
+      .section-block h2 {
+        font-size: 1.8rem;
+        color: #2f2419;
+        margin-bottom: 20px;
+        border-right: 5px solid #b87c4b;
+        padding-right: 15px;
+      }
+      .section-block h2 i {
+        color: #8b5a2b;
+        margin-left: 10px;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .info-card {
+        background: #f8f3ed;
+        padding: 20px;
+        border-radius: 16px;
+        transition: 0.3s;
+      }
+      .info-card:hover {
+        background: #f0e8e0;
+        transform: translateY(-3px);
+      }
+      .info-card i {
+        font-size: 2rem;
+        color: #8b5a2b;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .info-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: #2f2419;
+      }
+      .info-card p {
+        font-size: 0.95rem;
+        color: #4d3f32;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+      .gallery-item {
+        background: #e8dccc;
+        height: 150px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: #5f3f24;
+        transition: 0.3s;
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+      .gallery-item:hover {
+        border-color: #8b5a2b;
+        transform: scale(1.02);
+      }
+      .gallery-item .label {
+        font-size: 0.8rem;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-top: 60px;
+      }
+
+      .story-item {
+        background: #f8f3ed;
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+        border-right: 4px solid #b87c4b;
+      }
+      .story-item .story-author {
+        font-weight: 600;
+        color: #8b5a2b;
+        margin-top: 10px;
+      }
+      .story-item .story-author i {
+        margin-left: 6px;
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .video-item {
+        background: #2f2419;
+        border-radius: 16px;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .video-item:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+      }
+      .video-item i {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .video-item .vid-label {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      .upload-area {
+        border: 3px dashed #d9c8b2;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        background: #faf6f0;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .upload-area:hover {
+        background: #f5efe9;
+        border-color: #8b5a2b;
+      }
+      .upload-area i {
+        font-size: 3rem;
+        color: #8b5a2b;
+        margin-bottom: 10px;
+      }
+
+      .review-item {
+        background: #f8f3ed;
+        padding: 16px 20px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+      }
+      .review-item .stars {
+        color: #f5b342;
+      }
+      .review-item .review-author {
+        font-weight: 600;
+        margin-top: 6px;
+        color: #8b5a2b;
+      }
+
+      @media (max-width: 700px) {
+        .hero-page {
+          padding: 25px;
+        }
+        .hero-page h1 {
+          font-size: 2.2rem;
+        }
+        .top-bar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .lang-actions {
+          justify-content: flex-start;
+          flex-wrap: wrap;
+        }
+        .nav-links {
+          justify-content: center;
+        }
+        .section-block {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo-area">
+          <i class="fas fa-landmark logo-icon"></i>
+          <div class="logo-text">أثر <span>الأردن</span></div>
+        </div>
+        <div class="lang-actions">
+          <a href="#" class="active-lang"><i class="fas fa-globe"></i> عربي</a>
+          <a href="#">English</a>
+          <a href="#"><i class="fas fa-envelope"></i> تواصل معنا</a>
+          <a href="#"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
+          <a href="#"><i class="fas fa-map"></i> خريطة الأردن</a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+          <a href="#"><i class="fas fa-photo-video"></i> أرشيف الصور</a>
+          <a href="#"><i class="fas fa-microphone-alt"></i> مقابلات</a>
+          <a href="#"><i class="fas fa-users"></i> شارك بتجربتك</a>
+          <a href="#"><i class="fas fa-newspaper"></i> تقارير صحفية</a>
+          <a href="#"><i class="fas fa-map-pin"></i> المواقع</a>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-button"
+        ><i class="fas fa-arrow-right"></i> العودة للرئيسية</a
+      >
+
+      <div class="hero-page">
+        <h1>🏙️ محافظة عمّان</h1>
+        <div class="subtitle">عاصمة التاريخ و قلب الأردن</div>
+        <div class="quick-stats">
+          <span><i class="fas fa-flag"></i> 5 حضارات</span>
+          <span><i class="fas fa-camera"></i> 245 صورة</span>
+          <span><i class="fas fa-video"></i> 37 تقريراً</span>
+          <span><i class="fas fa-star"></i> 4.9/5 تقييم</span>
+        </div>
+      </div>
+
+      <!-- 1. LOCATION -->
+      <div class="section-block">
+        <h2><i class="fas fa-map-pin"></i> الموقع ومعلومات الوصول</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-map-marked-alt"></i>
+            <h4>الموقع الجغرافي</h4>
+            <p>
+              عمّان هي عاصمة الأردن، تقع في وسط المملكة على تلال سبعة، وتمتد على
+              مساحة واسعة تضم جبالاً وأودية.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-plane"></i>
+            <h4>كيف تصل إليها</h4>
+            <p>
+              مطار الملكة علياء الدولي على بعد 30 كم من وسط المدينة. تتوفر
+              مواصلات عامة وسيارات أجرة من جميع المدن.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h4>أفضل أوقات الزيارة</h4>
+            <p>
+              الربيع والخريف (مارس-مايو، سبتمبر-نوفمبر) هما أفضل الفصول لزيارة
+              عمّان بمناخها المعتدل.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. HISTORY -->
+      <div class="section-block">
+        <h2><i class="fas fa-history"></i> التاريخ والنشأة</h2>
+        <p style="font-size: 1.05rem; margin-bottom: 16px">
+          عمّان هي واحدة من أقدم المدن المأهولة باستمرار في العالم، وتمتد جذورها
+          إلى أكثر من 9000 عام.
+        </p>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h4>النشأة</h4>
+            <p>
+              تعود أولى المستوطنات في عمّان إلى العصر الحجري الحديث (حوالي 7500
+              ق.م)، وكانت تُعرف بـ"ربّة عمون".
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-crown"></i>
+            <h4>العصر العمّوني</h4>
+            <p>
+              كانت عمّان عاصمة مملكة عمون في الألفية الأولى قبل الميلاد، وازدهرت
+              كمركز تجاري وسياسي مهم.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-university"></i>
+            <h4>عصر الفلاسفة</h4>
+            <p>
+              في العصر الروماني، عُرفت بـ"فيلادلفيا" وأصبحت مدينة رئيسية في حلف
+              المدن العشر (الديكابوليس).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. CIVILIZATIONS -->
+      <div class="section-block">
+        <h2><i class="fas fa-people-arrows"></i> الحضارات والشعوب</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>العصر الحجري الحديث</h4>
+            <p>
+              أول المستوطنات البشرية في منطقة عين غزال، مع تماثيل الجص الشهيرة
+              التي تعود لـ 7500 ق.م.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>مملكة عمون</h4>
+            <p>
+              ازدهرت في الألفية الأولى ق.م، وتركت آثاراً في جبل القلعة والمقابر
+              الملكية.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>العصر الروماني</h4>
+            <p>
+              بُنيت فيلادلفيا على الطراز الروماني، مع مدرج روماني ومعبد هرقل
+              وأسواق عامة.
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-flag"></i>
+            <h4>العصر الإسلامي</h4>
+            <p>
+              استمرت عمّان مزدهرة خلال العصور الأموية والعباسية والمملوكية
+              والعثمانية.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. STORIES -->
+      <div class="section-block">
+        <h2><i class="fas fa-user-tie"></i> قصص السكان وكبار السن</h2>
+        <div class="story-item">
+          <p>
+            "أتذكر عندما كانت عمّان صغيرة، وكان جبل القلعة هو مركز المدينة. كنا
+            نصعد إليه وننظر إلى الأفق ونحن نحلم بالمستقبل."
+          </p>
+          <div class="story-author">
+            <i class="fas fa-user"></i> الحاج سليم، 82 عاماً، من عشائر عمّان
+          </div>
+        </div>
+        <div class="story-item">
+          <p>
+            "كان جدي يخبرنا أن المدرج الروماني كان يستضيف عروضاً مسرحية في
+            الليل، وكانت الأضواء تضيء الجبال المحيطة."
+          </p>
+          <div class="story-author">
+            <i class="fas fa-user"></i> أبو هشام، 67 عاماً، تاجر من البلقاء
+          </div>
+        </div>
+        <div class="story-item">
+          <p>
+            "في الخمسينيات، كانت نبع عين غزال مورداً للمياه لجميع سكان شرق
+            عمّان. كل عائلة كان لها موعدها الخاص لجلب الماء."
+          </p>
+          <div class="story-author">
+            <i class="fas fa-user"></i> أم علي، 73 عاماً، من منطقة جبل النزهة
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. GALLERY -->
+      <div class="section-block">
+        <h2><i class="fas fa-images"></i> صور قديمة وحديثة</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">جبل القلعة - 1920</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">المدرج الروماني - 1940</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">عمّان القديمة - 1960</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">جبل عمان - 2020</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">البلدة القديمة - 1975</span>
+          </div>
+          <div class="gallery-item">
+            <i class="fas fa-image"></i
+            ><span class="label">عمّان الحديثة - 2024</span>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 16px">
+          <span
+            style="
+              background: #f0e8e0;
+              padding: 8px 20px;
+              border-radius: 30px;
+              display: inline-block;
+              font-size: 0.9rem;
+            "
+          >
+            <i class="fas fa-upload"></i> شارك صورك القديمة عن عمّان
+          </span>
+        </div>
+      </div>
+
+      <!-- 6. VIDEOS -->
+      <div class="section-block">
+        <h2><i class="fas fa-video"></i> فيديوهات وتقارير مصورة</h2>
+        <div class="video-grid">
+          <div class="video-item">
+            <i class="fas fa-play-circle"></i>
+            <div class="vid-label">تقرير: عمّان عبر العصور</div>
+            <div style="font-size: 0.8rem; opacity: 0.7">▶️ 18 دقيقة</div>
+          </div>
+          <div class="video-item">
+            <i class="fas fa-play-circle"></i>
+            <div class="vid-label">جولة في جبل القلعة</div>
+            <div style="font-size: 0.8rem; opacity: 0.7">▶️ 10 دقائق</div>
+          </div>
+          <div class="video-item">
+            <i class="fas fa-play-circle"></i>
+            <div class="vid-label">عمّان القديمة والحديثة</div>
+            <div style="font-size: 0.8rem; opacity: 0.7">▶️ 14 دقيقة</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. INTERVIEWS -->
+      <div class="section-block">
+        <h2><i class="fas fa-microphone-alt"></i> مقابلات مع مؤرخين وباحثين</h2>
+        <div class="content-grid">
+          <div class="info-card">
+            <i class="fas fa-user-graduate"></i>
+            <h4>د. حسن النعيمات - مؤرخ</h4>
+            <p>
+              "عمّان هي كتاب مفتوح يروي قصة الأردن من العصر الحجري الحديث حتى
+              يومنا هذا."
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-user-graduate"></i>
+            <h4>أ. ميسون النجار - باحثة تراث</h4>
+            <p>
+              "تماثيل عين غزال هي أقدم تماثيل بشرية معروفة، وهي شهادة على عمق
+              الحضارة في عمّان."
+            </p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-user-tie"></i>
+            <h4>أبو شادي - من أهالي عمّان</h4>
+            <p>
+              "عمّان حضن كبير، جمعت بين القديم والحديث، وبين الجبال والوديان،
+              وبين الناس من كل مكان."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. NEWS -->
+      <div class="section-block">
+        <h2><i class="fas fa-newspaper"></i> قصص وتقارير صحفية</h2>
+        <div class="story-item" style="border-right-color: #2f2419">
+          <h4 style="color: #8b5a2b">
+            "اكتشافات جديدة في جبل القلعة تعيد كتابة تاريخ عمّان"
+          </h4>
+          <p>
+            بعثة أثرية أردنية تكشف عن معبد من العصر الحديدي يعود للقرن الثامن
+            قبل الميلاد في جبل القلعة.
+          </p>
+          <div style="color: #6d5a48; font-size: 0.85rem">
+            📰 الدستور - 10 فبراير 2025
+          </div>
+        </div>
+        <div class="story-item" style="border-right-color: #2f2419">
+          <h4 style="color: #8b5a2b">
+            "عمّان عاصمة الثقافة العربية 2025: احتفالات وتاريخ"
+          </h4>
+          <p>
+            تقرير شامل عن فعاليات عمّان عاصمة الثقافة العربية، مع تركيز على
+            التراث والمعالم الأثرية.
+          </p>
+          <div style="color: #6d5a48; font-size: 0.85rem">
+            📰 العرب اليوم - 15 يناير 2025
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. MAP -->
+      <div class="section-block">
+        <h2><i class="fas fa-map-marked-alt"></i> موقع المكان على الخريطة</h2>
+        <div
+          style="
+            background: #e0d3c6;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            color: #2f2419;
+          "
+        >
+          <i
+            class="fas fa-map"
+            style="font-size: 4rem; display: block; margin-bottom: 12px"
+          ></i>
+          <p style="font-size: 1.1rem">📍 عمّان، محافظة العاصمة، الأردن</p>
+          <p style="font-size: 0.9rem; opacity: 0.7">
+            إحداثيات: 31.9539° N, 35.9106° E
+          </p>
+          <div
+            style="
+              background: white;
+              border-radius: 12px;
+              padding: 12px;
+              margin-top: 12px;
+            "
+          >
+            <i class="fas fa-location-dot" style="color: #8b5a2b"></i>
+            <a href="#" style="color: #8b5a2b; text-decoration: none"
+              >فتح في خرائط جوجل</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. REVIEWS -->
+      <div class="section-block">
+        <h2><i class="fas fa-star"></i> تجارب الزوار والسياح</h2>
+        <div class="review-item">
+          <div class="stars">★★★★★</div>
+          <p>
+            "عمّان مدينة رائعة تجمع بين الأصالة والحداثة. جبل القلعة والمدرج
+            الروماني من أجمل المعالم."
+          </p>
+          <div class="review-author">فاطمة من الكويت - زيارة مارس 2025</div>
+        </div>
+        <div class="review-item">
+          <div class="stars">★★★★★</div>
+          <p>
+            "قضيت أسبوعاً في عمّان، وتجولت في شوارعها القديمة والحديثة. المدينة
+            نابضة بالحياة والتاريخ."
+          </p>
+          <div class="review-author">
+            Mark من الولايات المتحدة - زيارة أبريل 2025
+          </div>
+        </div>
+        <div class="review-item">
+          <div class="stars">★★★★☆</div>
+          <p>
+            "مدينة جميلة وكريمة، أهلها طيبون. المدرج الروماني في الليل مشهد لا
+            يُنسى."
+          </p>
+          <div class="review-author">سمير من فلسطين - زيارة مايو 2025</div>
+        </div>
+      </div>
+
+      <!-- 11. UPLOAD -->
+      <div class="section-block">
+        <h2><i class="fas fa-upload"></i> شارك بتجربتك في عمّان</h2>
+        <div class="upload-area">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <h3 style="color: #2f2419">ارفع صورتك أو قصتك عن عمّان</h3>
+          <p style="color: #6d5a48">
+            انقر أو اسحب ملفاتك هنا لتشارك ذاكرتك عن عمّان مع الجميع
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              justify-content: center;
+              flex-wrap: wrap;
+              margin-top: 12px;
+            "
+          >
+            <span
+              style="
+                background: #8b5a2b;
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                font-size: 0.9rem;
+              "
+            >
+              <i class="fas fa-image"></i> صور
+            </span>
+            <span
+              style="
+                background: #8b5a2b;
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                font-size: 0.9rem;
+              "
+            >
+              <i class="fas fa-pen-fancy"></i> قصة
+            </span>
+            <span
+              style="
+                background: #8b5a2b;
+                color: white;
+                padding: 8px 20px;
+                border-radius: 30px;
+                display: inline-block;
+                font-size: 0.9rem;
+              "
+            >
+              <i class="fas fa-info-circle"></i> معلومات
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 40px;
+          padding-top: 20px;
+          border-top: 1px solid #ddd;
+          font-size: 0.85rem;
+          opacity: 0.6;
+        "
+      >
+        <i class="fas fa-copyright"></i> 2026 أثر الأردن — نوثائق المكان ونحفظ
+        الحكاية
+      </div>
+    </div>
+  </body>
+</html>
