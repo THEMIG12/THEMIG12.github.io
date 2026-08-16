@@ -2,12 +2,8 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.5"
-    />
-    <title>أثر الأردن | ذاكرة رقمية للأردن</title>
-    <!-- Font Awesome (any version) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أثر الأردن | نوثائق تاريخ وحضارة الأثار في الأردن</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -21,148 +17,187 @@
 
       body {
         font-family: "Segoe UI", "Tahoma", system-ui, sans-serif;
-        background: #fcf7f0;
-        color: #1e2a3a;
+        background: #f5ede4;
+        color: #2c241a;
         line-height: 1.6;
-        padding: 0 16px;
+        padding: 0 20px;
       }
 
       .container {
-        max-width: 1280px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 20px 0 40px;
       }
 
-      /* ===== HEADER / NAV ===== */
+      /* ===== TOP BAR ===== */
       .top-bar {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        padding: 12px 0 8px;
-        border-bottom: 2px solid #d9c8b2;
-        margin-bottom: 24px;
+        padding: 10px 0 12px;
+        border-bottom: 3px solid #c4a88a;
+        margin-bottom: 16px;
       }
 
       .logo-area {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
       }
 
       .logo-icon {
-        font-size: 2rem;
-        color: #8b5a2b;
+        font-size: 2.2rem;
+        color: #8b6b4a;
       }
 
       .logo-text {
-        font-size: 1.8rem;
-        font-weight: 700;
-        letter-spacing: -0.5px;
+        font-size: 2rem;
+        font-weight: 800;
         color: #3d2b1a;
+        letter-spacing: -1px;
       }
       .logo-text span {
         color: #b87c4b;
       }
 
-      .lang-actions {
+      .logo-sub {
+        font-size: 0.7rem;
+        color: #6d5a48;
+        display: block;
+        font-weight: 400;
+        margin-top: -4px;
+        letter-spacing: 0.5px;
+      }
+
+      .top-links {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 16px;
-        font-size: 0.95rem;
+        gap: 14px;
+        font-size: 0.9rem;
       }
 
-      .lang-actions a {
+      .top-links a {
         text-decoration: none;
-        color: #2b3a4a;
+        color: #3d3228;
         font-weight: 500;
-        padding: 4px 8px;
-        border-radius: 20px;
+        padding: 4px 6px;
         transition: 0.2s;
       }
-      .lang-actions a:hover {
-        background: #e5d5c4;
+      .top-links a:hover {
+        color: #8b6b4a;
       }
-      .lang-actions .active-lang {
-        background: #8b5a2b;
+      .top-links .lang-btn {
+        background: #8b6b4a;
         color: white;
-        padding: 4px 14px;
+        padding: 4px 16px;
         border-radius: 30px;
+        font-weight: 600;
+      }
+      .top-links .lang-btn:hover {
+        background: #6d4f33;
+        color: white;
+      }
+
+      /* ===== NAVIGATION ===== */
+      .nav-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0 8px;
+        border-bottom: 1px solid #dacfc4;
+        margin-bottom: 18px;
       }
 
       .nav-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 10px;
-        width: 100%;
-        justify-content: flex-start;
-        border-top: 1px solid #e0d3c6;
-        padding-top: 14px;
+        gap: 28px;
       }
       .nav-links a {
         text-decoration: none;
-        color: #1e2a3a;
+        color: #2c241a;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 0.95rem;
         transition: 0.2s;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-links a i {
-        color: #8b5a2b;
+        padding: 4px 0;
+        border-bottom: 2px solid transparent;
       }
       .nav-links a:hover {
-        color: #8b5a2b;
-        transform: translateY(-2px);
+        color: #8b6b4a;
+        border-bottom-color: #8b6b4a;
+      }
+      .nav-links a.active {
+        color: #8b6b4a;
+        border-bottom-color: #8b6b4a;
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 12px;
+      }
+      .nav-actions a {
+        text-decoration: none;
+        color: #2c241a;
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding: 6px 14px;
+        border-radius: 30px;
+        transition: 0.2s;
+        background: #f0e8e0;
+      }
+      .nav-actions a:hover {
+        background: #dacfc4;
       }
 
       /* ===== HERO TAGLINE ===== */
       .hero-tagline {
         background: #e8dccc;
-        padding: 24px 28px;
-        border-radius: 60px 20px 60px 20px;
-        margin: 16px 0 30px;
+        padding: 28px 36px;
+        border-radius: 50px 12px 50px 12px;
+        margin-bottom: 28px;
         text-align: center;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        border: 1px solid #dacfc4;
       }
       .hero-tagline h1 {
-        font-size: 2.2rem;
-        font-weight: 600;
+        font-size: 2.4rem;
+        font-weight: 700;
         color: #2f2419;
-        letter-spacing: -0.3px;
+        letter-spacing: -0.5px;
       }
       .hero-tagline h1 i {
-        color: #a5723e;
-        margin-left: 10px;
+        color: #b87c4b;
+        margin-left: 12px;
       }
       .hero-tagline .sub {
-        font-size: 1.1rem;
-        opacity: 0.8;
-        margin-top: 6px;
+        font-size: 1rem;
+        opacity: 0.75;
+        margin-top: 4px;
+        color: #4d3f32;
       }
 
       /* ===== SEARCH ===== */
       .search-wrapper {
         background: white;
         border-radius: 60px;
-        padding: 8px 16px 8px 8px;
+        padding: 6px 6px 6px 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        border: 1px solid #dacfc4;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        border: 2px solid #dacfc4;
         margin-bottom: 36px;
-        max-width: 600px;
+        max-width: 620px;
         margin-right: auto;
         margin-left: auto;
       }
       .search-wrapper i {
-        color: #8b5a2b;
-        padding: 0 8px;
-        font-size: 1.2rem;
+        color: #8b6b4a;
+        font-size: 1.1rem;
+        margin-left: 8px;
       }
       .search-wrapper input {
         border: none;
@@ -172,54 +207,67 @@
         background: transparent;
         outline: none;
         font-family: inherit;
+        color: #2c241a;
+      }
+      .search-wrapper input::placeholder {
+        color: #a08f7e;
       }
       .search-wrapper button {
-        background: #8b5a2b;
+        background: #8b6b4a;
         border: none;
         color: white;
-        padding: 10px 24px;
+        padding: 10px 28px;
         border-radius: 40px;
         font-weight: 600;
         font-size: 0.95rem;
         cursor: pointer;
         transition: 0.2s;
         font-family: inherit;
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
       .search-wrapper button:hover {
-        background: #6f451f;
+        background: #6d4f33;
       }
 
-      /* ===== MAIN GRID : 4 Pages (محافظات) ===== */
+      /* ===== SECTION TITLE ===== */
       .section-title {
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin: 40px 0 20px;
+        font-size: 1.7rem;
+        font-weight: 700;
         color: #2f2419;
+        margin: 36px 0 20px;
         border-right: 6px solid #b87c4b;
         padding-right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .section-title i {
+        color: #b87c4b;
       }
 
+      /* ===== CARDS GRID ===== */
       .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 28px;
+        gap: 24px;
         margin-bottom: 40px;
       }
 
       .card {
         background: white;
-        border-radius: 32px 12px 32px 12px;
+        border-radius: 28px 12px 28px 12px;
         overflow: hidden;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-        transition: all 0.25s ease;
-        border: 1px solid #eee6dd;
-        display: flex;
-        flex-direction: column;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid #e8ddd2;
+        cursor: pointer;
       }
       .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.07);
-        border-color: #c9b09b;
+        transform: translateY(-6px);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+        border-color: #c4a88a;
       }
 
       .card-img {
@@ -234,75 +282,87 @@
         position: relative;
       }
       .card-img i {
-        opacity: 0.7;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        opacity: 0.8;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       }
+      .card-img .card-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(139, 107, 74, 0.9);
+        color: white;
+        padding: 4px 14px;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+
       .card-body {
-        padding: 22px 20px 26px;
+        padding: 20px 22px 24px;
         flex: 1;
         display: flex;
         flex-direction: column;
       }
       .card-body h3 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        margin-bottom: 6px;
+        margin-bottom: 2px;
         color: #2b1f14;
       }
       .card-body .subhead {
         color: #6d5a48;
         font-weight: 400;
-        font-size: 0.95rem;
-        margin-bottom: 12px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
         letter-spacing: 0.2px;
       }
       .card-body p {
         color: #3d3228;
-        font-size: 0.98rem;
-        line-height: 1.5;
-        margin-bottom: 16px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 14px;
         flex: 1;
       }
       .card-body .badge-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px 14px;
-        margin: 8px 0 14px;
-        font-size: 0.85rem;
+        gap: 6px 16px;
+        margin: 6px 0 14px;
+        font-size: 0.8rem;
         color: #5a4532;
       }
       .card-body .badge-list i {
-        margin-left: 6px;
-        color: #8b5a2b;
-        width: 18px;
+        margin-left: 5px;
+        color: #8b6b4a;
+        width: 16px;
       }
       .card-footer-link {
-        margin-top: 10px;
+        margin-top: 6px;
         font-weight: 600;
-        color: #8b5a2b;
+        color: #8b6b4a;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        border-bottom: 2px solid transparent;
         transition: 0.2s;
         width: fit-content;
+        font-size: 0.95rem;
       }
       .card-footer-link:hover {
-        border-bottom-color: #8b5a2b;
-        gap: 10px;
+        gap: 12px;
+        color: #6d4f33;
       }
 
-      /* ===== 12 SUB PAGES (مميزات المشاركة) ===== */
+      /* ===== SUB FEATURES ===== */
       .sub-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 18px;
-        margin: 24px 0 40px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin: 20px 0 36px;
       }
       .sub-item {
         background: #f5efe9;
-        border-radius: 40px 12px 40px 12px;
+        border-radius: 30px 10px 30px 10px;
         padding: 18px 12px;
         text-align: center;
         transition: 0.2s;
@@ -310,45 +370,51 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 6px;
+        gap: 4px;
+        text-decoration: none;
+        color: #2c241a;
       }
       .sub-item:hover {
         background: #ecdfd3;
-        transform: scale(1.02);
+        transform: translateY(-3px);
         border-color: #b08766;
       }
       .sub-item i {
-        font-size: 2rem;
-        color: #8b5a2b;
+        font-size: 1.8rem;
+        color: #8b6b4a;
         margin-bottom: 4px;
       }
       .sub-item span {
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
       }
       .sub-item small {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         opacity: 0.7;
       }
 
-      /* ===== FOOTER / مهم ===== */
+      /* ===== FOOTER ===== */
       .footer-note {
-        margin: 50px 0 20px;
+        margin: 40px 0 24px;
         background: #e8dccc;
-        padding: 24px 28px;
-        border-radius: 60px 12px 60px 12px;
+        padding: 24px 32px;
+        border-radius: 50px 12px 50px 12px;
         text-align: center;
         border: 1px solid #d1bca8;
       }
       .footer-note h3 {
-        font-size: 1.6rem;
-        font-weight: 600;
+        font-size: 1.5rem;
+        font-weight: 700;
         color: #2f2419;
       }
+      .footer-note h3 i {
+        color: #b87c4b;
+        margin-left: 10px;
+      }
       .footer-note p {
-        max-width: 700px;
+        max-width: 680px;
         margin: 8px auto 0;
-        font-size: 1rem;
+        font-size: 0.95rem;
         color: #3d3228;
       }
 
@@ -356,62 +422,110 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px 40px;
-        padding: 20px 0 10px;
+        gap: 16px 36px;
+        padding: 16px 0 10px;
         border-top: 1px solid #d9c8b2;
-        margin-top: 20px;
+        margin-top: 16px;
       }
       .footer-links a {
         text-decoration: none;
-        color: #2f3a47;
+        color: #3d3228;
         font-weight: 400;
+        font-size: 0.9rem;
+        transition: 0.2s;
+      }
+      .footer-links a:hover {
+        color: #8b6b4a;
       }
       .footer-links a i {
         margin-left: 6px;
+        color: #8b6b4a;
+      }
+
+      .copyright {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        border-top: 1px solid #ddd;
+        padding-top: 16px;
       }
 
       /* ===== RESPONSIVE ===== */
-      @media (max-width: 700px) {
+      @media (max-width: 768px) {
+        body {
+          padding: 0 12px;
+        }
+
         .top-bar {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 8px;
+        }
+        .top-links {
+          justify-content: flex-start;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        .logo-text {
+          font-size: 1.6rem;
+        }
+
+        .nav-bar {
           flex-direction: column;
           align-items: stretch;
           gap: 10px;
         }
-        .lang-actions {
-          justify-content: flex-start;
-          gap: 10px;
-        }
         .nav-links {
           justify-content: center;
-          gap: 12px 16px;
+          gap: 14px;
+          flex-wrap: wrap;
+        }
+        .nav-actions {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .hero-tagline {
+          padding: 20px 18px;
         }
         .hero-tagline h1 {
-          font-size: 1.7rem;
+          font-size: 1.6rem;
         }
+
         .search-wrapper {
           flex-wrap: wrap;
-          border-radius: 40px;
+          border-radius: 30px;
           padding: 6px 12px;
+          max-width: 100%;
         }
         .search-wrapper input {
-          padding: 12px 4px;
-          font-size: 0.95rem;
+          padding: 10px 4px;
+          font-size: 0.9rem;
         }
         .search-wrapper button {
           width: 100%;
           margin-top: 6px;
-          padding: 12px;
+          padding: 10px;
+          justify-content: center;
         }
+
         .card-grid {
           grid-template-columns: 1fr;
-          gap: 20px;
+          gap: 18px;
         }
         .sub-grid {
           grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
+          gap: 10px;
         }
         .section-title {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
+        }
+        .footer-note {
+          padding: 18px 16px;
+        }
+        .footer-note h3 {
+          font-size: 1.2rem;
         }
       }
 
@@ -420,40 +534,64 @@
           grid-template-columns: 1fr 1fr;
         }
         .logo-text {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
         }
-        .hero-tagline {
-          padding: 16px;
+        .hero-tagline h1 {
+          font-size: 1.3rem;
         }
-      }
-
-      /* extra styling for icons */
-      .fa-chevron-left {
-        margin-right: 4px;
-      }
-      .rtl-icon {
-        transform: scaleX(-1);
+        .nav-links {
+          gap: 10px;
+          font-size: 0.85rem;
+        }
+        .nav-links a {
+          font-size: 0.85rem;
+        }
+        .card-body h3 {
+          font-size: 1.3rem;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <!-- HEADER -->
+      <!-- ===== TOP BAR ===== -->
       <div class="top-bar">
         <div class="logo-area">
           <i class="fas fa-landmark logo-icon"></i>
-          <div class="logo-text">أثر <span>الأردن</span></div>
+          <div>
+            <div class="logo-text">أثر <span>الأردن</span></div>
+            <div class="logo-sub">نوثائق تاريخ وحضارة الآثار في الأردن</div>
+          </div>
         </div>
-        <div class="lang-actions">
-          <a href="#" class="active-lang"><i class="fas fa-globe"></i> عربي</a>
-          <a href="#">English</a>
-          <a href="#"><i class="fas fa-envelope"></i> تواصل معنا</a>
-          <a href="#"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
-          <a href="#"><i class="fas fa-map"></i> خريطة الأردن</a>
+        <div class="top-links">
+          <a href="#"><i class="fas fa-globe"></i> English</a>
+          <a href="#" class="lang-btn">عربي</a>
+          <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
+          <a href="stories.html"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
+          <a href="map.html"><i class="fas fa-map"></i> خريطة الأردن</a>
         </div>
       </div>
 
-      <!-- HERO -->
+      <!-- ===== NAVIGATION ===== -->
+      <div class="nav-bar">
+        <div class="nav-links">
+          <a href="index.html" class="active"
+            ><i class="fas fa-home"></i> الرئيسية</a
+          >
+          <a href="map.html"><i class="fas fa-map"></i> خريطة الأردن</a>
+          <a href="stories.html"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
+          <a href="#"><i class="fas fa-photo-video"></i> أرشيف الصور</a>
+          <a href="#"><i class="fas fa-microphone-alt"></i> مقابلات</a>
+          <a href="#"><i class="fas fa-newspaper"></i> تقارير صحفية</a>
+          <a href="#"><i class="fas fa-users"></i> شارك بتجربتك</a>
+        </div>
+        <div class="nav-actions">
+          <a href="#"><i class="fas fa-search"></i></a>
+          <a href="#"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
+
+      <!-- ===== HERO ===== -->
       <div class="hero-tagline">
         <h1><i class="fas fa-archive"></i> نوثائق المكان ... ونحفظ الحكاية</h1>
         <div class="sub">
@@ -461,21 +599,24 @@
         </div>
       </div>
 
-      <!-- SEARCH -->
+      <!-- ===== SEARCH ===== -->
       <div class="search-wrapper">
         <i class="fas fa-search"></i>
         <input type="text" placeholder="إبحث عن موقع أثرى أو محافظة ..." />
-        <button></i> بحث</button>
+        <button><i class="fas fa-arrow-left"></i> بحث</button>
       </div>
 
-      <!-- ====== 4 MAIN PAGES (محافظات) ====== -->
+      <!-- ===== 4 MAIN PAGES ===== -->
       <h2 class="section-title">
-        <i class="fas fa-chevron-left rtl-icon"></i> المحافظات الرئيسية
+        <i class="fas fa-chevron-left"></i> المحافظات الرئيسية
       </h2>
       <div class="card-grid">
         <!-- جرش -->
-        <div class="card">
-          <div class="card-img"><i class="fas fa-columns"></i></div>
+        <div class="card" onclick="window.location.href = 'jerash.html'">
+          <div class="card-img">
+            <i class="fas fa-columns"></i>
+            <span class="card-badge">روماني</span>
+          </div>
           <div class="card-body">
             <h3>جرش</h3>
             <div class="subhead">اكشف التاريخ بين أعمدة الحضارة</div>
@@ -488,14 +629,18 @@
               <span><i class="fas fa-flag"></i> بيزنطي</span>
               <span><i class="fas fa-camera"></i> ٢٨ صورة</span>
             </div>
-            <a href="#" class="card-footer-link"
-              >استكشف جرش <i class="fas fa-arrow-left rtl-icon"></i
+            <a href="jerash.html" class="card-footer-link"
+              >استكشف جرش <i class="fas fa-arrow-left"></i
             ></a>
           </div>
         </div>
+
         <!-- عمّان -->
-        <div class="card">
-          <div class="card-img"><i class="fas fa-city"></i></div>
+        <div class="card" onclick="window.location.href = 'amman.html'">
+          <div class="card-img">
+            <i class="fas fa-city"></i>
+            <span class="card-badge">عمّوني</span>
+          </div>
           <div class="card-body">
             <h3>عمّان</h3>
             <div class="subhead">عاصمة التاريخ و قلب الأردن</div>
@@ -508,14 +653,18 @@
               <span><i class="fas fa-flag"></i> روماني</span>
               <span><i class="fas fa-flag"></i> إسلامي</span>
             </div>
-            <a href="#" class="card-footer-link"
-              >استكشف عمّان <i class="fas fa-arrow-left rtl-icon"></i
+            <a href="amman.html" class="card-footer-link"
+              >استكشف عمّان <i class="fas fa-arrow-left"></i
             ></a>
           </div>
         </div>
+
         <!-- إربد -->
-        <div class="card">
-          <div class="card-img"><i class="fas fa-tree"></i></div>
+        <div class="card" onclick="window.location.href = 'irbid.html'">
+          <div class="card-img">
+            <i class="fas fa-tree"></i>
+            <span class="card-badge">يوناني</span>
+          </div>
           <div class="card-body">
             <h3>إربد</h3>
             <div class="subhead">الأصالة و التراث في كل زاوية</div>
@@ -528,14 +677,18 @@
               <span><i class="fas fa-flag"></i> روماني</span>
               <span><i class="fas fa-video"></i> ١٢ تقريراً</span>
             </div>
-            <a href="#" class="card-footer-link"
-              >استكشف إربد <i class="fas fa-arrow-left rtl-icon"></i
+            <a href="irbid.html" class="card-footer-link"
+              >استكشف إربد <i class="fas fa-arrow-left"></i
             ></a>
           </div>
         </div>
-        <!-- البتراء (إضافة كرابعة) -->
-        <div class="card">
-          <div class="card-img"><i class="fas fa-mountain"></i></div>
+
+        <!-- البتراء -->
+        <div class="card" onclick="window.location.href = 'petra.html'">
+          <div class="card-img">
+            <i class="fas fa-mountain"></i>
+            <span class="card-badge">أنباط</span>
+          </div>
           <div class="card-body">
             <h3>البتراء</h3>
             <div class="subhead">الوردية .. مدينة الأنباط</div>
@@ -549,73 +702,82 @@
               <span><i class="fas fa-star"></i> عجيبة الدنيا</span>
             </div>
             <a href="#" class="card-footer-link"
-              >استكشف البتراء <i class="fas fa-arrow-left rtl-icon"></i
+              >استكشف البتراء <i class="fas fa-arrow-left"></i
             ></a>
           </div>
         </div>
       </div>
 
-      <!-- ====== 12 SUB PAGES (أهم الميزات التشاركية) ====== -->
+      <!-- ===== 12 SUB PAGES ===== -->
       <h2 class="section-title">
-        <i class="fas fa-chevron-left rtl-icon"></i> أرشيف تشاركي متكامل
+        <i class="fas fa-chevron-left"></i> أرشيف تشاركي متكامل
       </h2>
       <div class="sub-grid">
-        <div class="sub-item">
-          <i class="fas fa-map-pin"></i><span>📍 الموقع والوصول</span
-          ><small>خرائط واتجاهات</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-history"></i><span>🏛️ التاريخ والنشأة</span
-          ><small>الخلفية التاريخية</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-people-arrows"></i><span>👥 الحضارات والسكان</span
-          ><small>الشعوب المتعاقبة</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-user-tie"></i><span>👴 قصص كبار السن</span
-          ><small>ذاكرة حية</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-images"></i><span>📸 صور قديمة وحديثة</span
-          ><small>أرشيف بصري</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-video"></i><span>🎥 فيديوهات وتقارير</span
-          ><small>مادة مصورة</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-microphone-alt"></i><span>🎙️ مقابلات مؤرخين</span
-          ><small>باحثون وسكان</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-newspaper"></i><span>📰 قصص صحفية</span
-          ><small>تغطيات وتقارير</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-map-marked-alt"></i><span>🗺️ الخريطة التفاعلية</span
-          ><small>موقع المكان</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-star"></i><span>⭐ تجارب الزوار</span
-          ><small>تقييمات وانطباعات</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-upload"></i><span>📤 رفع الصور والتجارب</span
-          ><small>شارك ذاكرتك</small>
-        </div>
-        <div class="sub-item">
-          <i class="fas fa-users-cog"></i><span>📋 أرشيف تشاركي</span
-          ><small>مساهمات الجميع</small>
-        </div>
+        <a href="#" class="sub-item">
+          <i class="fas fa-map-pin"></i>
+          <span>📍 الموقع والوصول</span>
+          <small>خرائط واتجاهات</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-history"></i>
+          <span>🏛️ التاريخ والنشأة</span>
+          <small>الخلفية التاريخية</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-people-arrows"></i>
+          <span>👥 الحضارات والسكان</span>
+          <small>الشعوب المتعاقبة</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-user-tie"></i>
+          <span>👴 قصص كبار السن</span>
+          <small>ذاكرة حية</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-images"></i>
+          <span>📸 صور قديمة وحديثة</span>
+          <small>أرشيف بصري</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-video"></i>
+          <span>🎥 فيديوهات وتقارير</span>
+          <small>مادة مصورة</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-microphone-alt"></i>
+          <span>🎙️ مقابلات مؤرخين</span>
+          <small>باحثون وسكان</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-newspaper"></i>
+          <span>📰 قصص صحفية</span>
+          <small>تغطيات وتقارير</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-map-marked-alt"></i>
+          <span>🗺️ الخريطة التفاعلية</span>
+          <small>موقع المكان</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-star"></i>
+          <span>⭐ تجارب الزوار</span>
+          <small>تقييمات وانطباعات</small>
+        </a>
+        <a href="stories.html" class="sub-item">
+          <i class="fas fa-upload"></i>
+          <span>📤 رفع الصور والتجارب</span>
+          <small>شارك ذاكرتك</small>
+        </a>
+        <a href="#" class="sub-item">
+          <i class="fas fa-users-cog"></i>
+          <span>📋 أرشيف تشاركي</span>
+          <small>مساهمات الجميع</small>
+        </a>
       </div>
 
-      <!-- ====== FOOTER = رسالة المشروع ====== -->
+      <!-- ===== FOOTER ===== -->
       <div class="footer-note">
-        <h3>
-          <i class="fas fa-heart" style="color: #b87c4b"></i> أثر الأردن ..
-          ذاكرة رقمية للأردن
-        </h3>
+        <h3><i class="fas fa-heart"></i> أثر الأردن .. ذاكرة رقمية للأردن</h3>
         <p>
           نوثّق الحجر والإنسان معاً. مشاركتك تصنع الفرق: أرسل صورتك، قصتك، أو
           معلوماتك عن أي موقع في الأردن، وسنبني معاً أكبر أرشيف وطني تشاركي.
@@ -623,22 +785,17 @@
       </div>
 
       <div class="footer-links">
-        <a href="#"><i class="fas fa-globe-asia"></i> خريطة المواقع</a>
-        <a href="#"><i class="fas fa-hand-holding-heart"></i> شارك بتجربتك</a>
-        <a href="#"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+        <a href="#"><i class="fas fa-archive"></i> عن المشروع</a>
+        <a href="stories.html"
+          ><i class="fas fa-hand-holding-heart"></i> شارك بتجربتك</a
+        >
+        <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+        <a href="#"><i class="fas fa-camera-retro"></i> معرض الصور</a>
+        <a href="map.html"><i class="fas fa-globe-asia"></i> خريطة المواقع</a>
+        <a href="#"><i class="fas fa-newspaper"></i> أخبار وتقارير</a>
       </div>
 
-      <!-- tiny copyright -->
-      <div
-        style="
-          text-align: center;
-          margin-top: 20px;
-          font-size: 0.85rem;
-          opacity: 0.6;
-          border-top: 1px solid #ddd;
-          padding-top: 16px;
-        "
-      >
+      <div class="copyright">
         <i class="fas fa-copyright"></i> 2026 أثر الأردن — نوثائق المكان ونحفظ
         الحكاية
       </div>
