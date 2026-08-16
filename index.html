@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -8,588 +8,39 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Segoe UI", "Tahoma", system-ui, sans-serif;
-        background: #f5ede4;
-        color: #2c241a;
-        line-height: 1.6;
-        padding: 0 20px;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px 0 40px;
-      }
-
-      .top-bar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 0 12px;
-        border-bottom: 3px solid #c4a88a;
-        margin-bottom: 16px;
-      }
-      .logo-area {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .logo-icon {
-        font-size: 2.2rem;
-        color: #8b6b4a;
-      }
-      .logo-text {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #3d2b1a;
-        letter-spacing: -1px;
-      }
-      .logo-text span {
-        color: #b87c4b;
-      }
-      .logo-sub {
-        font-size: 0.7rem;
-        color: #6d5a48;
-        display: block;
-        font-weight: 400;
-        margin-top: -4px;
-      }
-      .top-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 14px;
-        font-size: 0.9rem;
-      }
-      .top-links a {
-        text-decoration: none;
-        color: #3d3228;
-        font-weight: 500;
-        padding: 4px 6px;
-        transition: 0.2s;
-      }
-      .top-links a:hover {
-        color: #8b6b4a;
-      }
-      .top-links .lang-btn {
-        background: #8b6b4a;
-        color: white;
-        padding: 4px 16px;
-        border-radius: 30px;
-        font-weight: 600;
-      }
-
-      .nav-bar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 0 8px;
-        border-bottom: 1px solid #dacfc4;
-        margin-bottom: 18px;
-      }
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 28px;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: #2c241a;
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: 0.2s;
-        padding: 4px 0;
-        border-bottom: 2px solid transparent;
-      }
-      .nav-links a:hover {
-        color: #8b6b4a;
-        border-bottom-color: #8b6b4a;
-      }
-      .nav-links a.active {
-        color: #8b6b4a;
-        border-bottom-color: #8b6b4a;
-      }
-      .nav-actions {
-        display: flex;
-        gap: 12px;
-      }
-      .nav-actions a {
-        text-decoration: none;
-        color: #2c241a;
-        font-weight: 500;
-        font-size: 0.9rem;
-        padding: 6px 14px;
-        border-radius: 30px;
-        transition: 0.2s;
-        background: #f0e8e0;
-      }
-
-      .hero-tagline {
-        background: #e8dccc;
-        padding: 28px 36px;
-        border-radius: 50px 12px 50px 12px;
-        margin-bottom: 28px;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        border: 1px solid #dacfc4;
-      }
-      .hero-tagline h1 {
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: #2f2419;
-      }
-      .hero-tagline h1 i {
-        color: #b87c4b;
-        margin-left: 12px;
-      }
-      .hero-tagline .sub {
-        font-size: 1rem;
-        opacity: 0.75;
-        margin-top: 4px;
-        color: #4d3f32;
-      }
-
-      .search-wrapper {
-        background: white;
-        border-radius: 60px;
-        padding: 6px 6px 6px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-        border: 2px solid #dacfc4;
-        margin-bottom: 36px;
-        max-width: 620px;
-        margin-right: auto;
-        margin-left: auto;
-      }
-      .search-wrapper i {
-        color: #8b6b4a;
-        font-size: 1.1rem;
-        margin-left: 8px;
-      }
-      .search-wrapper input {
-        border: none;
-        padding: 14px 8px;
-        font-size: 1rem;
-        width: 100%;
-        background: transparent;
-        outline: none;
-        font-family: inherit;
-      }
-      .search-wrapper button {
-        background: #8b6b4a;
-        border: none;
-        color: white;
-        padding: 10px 28px;
-        border-radius: 40px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        cursor: pointer;
-        font-family: inherit;
-      }
-
-      .section-title {
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: #2f2419;
-        margin: 36px 0 20px;
-        border-right: 6px solid #b87c4b;
-        padding-right: 16px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .section-title i {
-        color: #b87c4b;
-      }
-
-      .carousel-wrapper {
-        position: relative;
-        margin-bottom: 40px;
-        overflow: hidden;
-        border-radius: 20px;
-        width: 100%;
-      }
-      .carousel-container {
-        display: flex;
-        transition: transform 0.5s ease;
-        cursor: grab;
-        width: 100%;
-      }
-      .carousel-container.grabbing {
-        cursor: grabbing;
-        transition: none;
-      }
-      .carousel-slide {
-        flex: 0 0 25%;
-        padding: 0 10px;
-        display: flex;
-        max-width: 25%;
-        box-sizing: border-box;
-      }
-
-      .carousel-card {
-        background: white;
-        border-radius: 28px 12px 28px 12px;
-        overflow: hidden;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        border: 1px solid #e8ddd2;
-        cursor: pointer;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .carousel-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
-        border-color: #c4a88a;
-      }
-      .carousel-card .card-img {
-        height: 160px;
-        background: #d9c8b2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3.5rem;
-        color: #5f3f24;
-        background-image: linear-gradient(145deg, #dccfc2, #cbb9a6);
-        position: relative;
-        flex-shrink: 0;
-      }
-      .carousel-card .card-img .card-badge {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: rgba(139, 107, 74, 0.9);
-        color: white;
-        padding: 3px 12px;
-        border-radius: 30px;
-        font-size: 0.65rem;
-        font-weight: 600;
-      }
-      .carousel-card .card-body {
-        padding: 16px 18px 18px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .carousel-card .card-body h3 {
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 2px;
-        color: #2b1f14;
-      }
-      .carousel-card .card-body .subhead {
-        color: #6d5a48;
-        font-weight: 400;
-        font-size: 0.8rem;
-        margin-bottom: 6px;
-      }
-      .carousel-card .card-body p {
-        color: #3d3228;
-        font-size: 0.85rem;
-        line-height: 1.5;
-        margin-bottom: 8px;
-        flex: 1;
-      }
-      .carousel-card .card-body .badge-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px 10px;
-        margin: 4px 0 8px;
-        font-size: 0.7rem;
-        color: #5a4532;
-      }
-      .carousel-card .card-footer-link {
-        margin-top: 4px;
-        font-weight: 600;
-        color: #8b6b4a;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 0.85rem;
-      }
-
-      .carousel-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin-top: 16px;
-      }
-      .carousel-btn {
-        background: #8b6b4a;
-        color: white;
-        border: none;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: auto;
-        position: relative;
-        z-index: 100;
-      }
-      .carousel-btn:hover {
-        background: #6d4f33;
-        transform: scale(1.05);
-      }
-
-      .sub-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 16px;
-        margin: 20px 0 36px;
-      }
-      .sub-item {
-        background: #f5efe9;
-        border-radius: 30px 10px 30px 10px;
-        padding: 18px 12px;
-        text-align: center;
-        transition: 0.2s;
-        border: 1px solid #e2d4c8;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        text-decoration: none;
-        color: #2c241a;
-      }
-      .sub-item:hover {
-        background: #ecdfd3;
-        transform: translateY(-3px);
-        border-color: #b08766;
-      }
-      .sub-item i {
-        font-size: 1.8rem;
-        color: #8b6b4a;
-        margin-bottom: 4px;
-      }
-      .sub-item span {
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-      .sub-item small {
-        font-size: 0.7rem;
-        opacity: 0.7;
-      }
-
-      .footer-note {
-        margin: 40px 0 24px;
-        background: #e8dccc;
-        padding: 24px 32px;
-        border-radius: 50px 12px 50px 12px;
-        text-align: center;
-        border: 1px solid #d1bca8;
-      }
-      .footer-note h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #2f2419;
-      }
-      .footer-note h3 i {
-        color: #b87c4b;
-        margin-left: 10px;
-      }
-      .footer-note p {
-        max-width: 680px;
-        margin: 8px auto 0;
-        font-size: 0.95rem;
-        color: #3d3228;
-      }
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px 36px;
-        padding: 16px 0 10px;
-        border-top: 1px solid #d9c8b2;
-        margin-top: 16px;
-      }
-      .footer-links a {
-        text-decoration: none;
-        color: #3d3228;
-        font-weight: 400;
-        font-size: 0.9rem;
-      }
-      .footer-links a:hover {
-        color: #8b6b4a;
-      }
-      .copyright {
-        text-align: center;
-        margin-top: 16px;
-        font-size: 0.8rem;
-        opacity: 0.6;
-        border-top: 1px solid #ddd;
-        padding-top: 16px;
-      }
-
-      @media (max-width: 1024px) {
-        .carousel-slide {
-          flex: 0 0 33.333%;
-          max-width: 33.333%;
-        }
-      }
-      @media (max-width: 768px) {
-        body {
-          padding: 0 12px;
-        }
-        .top-bar {
-          flex-direction: column;
-          align-items: stretch;
-          gap: 8px;
-        }
-        .top-links {
-          justify-content: flex-start;
-          gap: 10px;
-        }
-        .logo-text {
-          font-size: 1.6rem;
-        }
-        .nav-bar {
-          flex-direction: column;
-          align-items: stretch;
-          gap: 10px;
-        }
-        .nav-links {
-          justify-content: center;
-          gap: 14px;
-        }
-        .nav-actions {
-          justify-content: center;
-        }
-        .hero-tagline {
-          padding: 20px 18px;
-        }
-        .hero-tagline h1 {
-          font-size: 1.6rem;
-        }
-        .search-wrapper {
-          flex-wrap: wrap;
-          border-radius: 30px;
-          padding: 6px 12px;
-          max-width: 100%;
-        }
-        .search-wrapper input {
-          padding: 10px 4px;
-          font-size: 0.9rem;
-        }
-        .search-wrapper button {
-          width: 100%;
-          margin-top: 6px;
-          padding: 10px;
-          justify-content: center;
-        }
-        .carousel-slide {
-          flex: 0 0 50%;
-          max-width: 50%;
-        }
-        .sub-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-        }
-        .section-title {
-          font-size: 1.3rem;
-        }
-      }
-      @media (max-width: 480px) {
-        .carousel-slide {
-          flex: 0 0 100%;
-          max-width: 100%;
-        }
-        .sub-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .logo-text {
-          font-size: 1.3rem;
-        }
-        .hero-tagline h1 {
-          font-size: 1.3rem;
-        }
-        .nav-links {
-          gap: 10px;
-        }
-        .nav-links a {
-          font-size: 0.8rem;
-        }
-        .carousel-card .card-img {
-          height: 120px;
-          font-size: 2.8rem;
-        }
-        .carousel-card .card-body h3 {
-          font-size: 1.1rem;
-        }
-        .carousel-btn {
-          width: 36px;
-          height: 36px;
-          font-size: 1rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="container">
       <div class="top-bar">
+      <div class="top-bar2">
         <div class="logo-area">
           <i class="fas fa-landmark logo-icon"></i>
           <div>
-            <div class="logo-text">أثر <span>الأردن</span></div>
+            <a href="../index.html"><div class="logo-text">أثر <span>الأردن</span></div></a>
             <div class="logo-sub">نوثائق تاريخ وحضارة الآثار في الأردن</div>
           </div>
         </div>
         <div class="top-links">
-          <a href="#"><i class="fas fa-globe"></i> English</a>
-          <a href="#" class="lang-btn">عربي</a>
+          <a href="map.html"><i class="fas fa-map"></i> خريطة الأردن</a>
+          <a href="stories.html"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
           <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
-          <a href="stories.html"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
-          <a href="map.html"><i class="fas fa-map"></i> خريطة الأردن</a>
-        </div>
-      </div>
-
-      <div class="nav-bar">
-        <div class="nav-links">
-          <a href="index.html" class="active"
-            ><i class="fas fa-home"></i> الرئيسية</a
-          >
-          <a href="map.html"><i class="fas fa-map"></i> خريطة الأردن</a>
-          <a href="stories.html"><i class="fas fa-pen-fancy"></i> قصص الزوار</a>
-          <a href="#"><i class="fas fa-photo-video"></i> أرشيف الصور</a>
-          <a href="#"><i class="fas fa-microphone-alt"></i> مقابلات</a>
-          <a href="#"><i class="fas fa-newspaper"></i> تقارير صحفية</a>
-          <a href="#"><i class="fas fa-users"></i> شارك بتجربتك</a>
-        </div>
-        <div class="nav-actions">
-          <a href="#"><i class="fas fa-search"></i></a>
-          <a href="#"><i class="fas fa-user"></i></a>
+          <a href="#" class="lang-btn">عربي</a>
+          <a href="#"><i class="fas fa-globe"></i> English</a>
         </div>
       </div>
 
       <div class="hero-tagline">
-        <h1><i class="fas fa-archive"></i> نوثائق المكان ... ونحفظ الحكاية</h1>
+        <h1>نوثائق المكان ... ونحفظ الحكاية</h1>
         <div class="sub">
           أرشيف رقمي تشاركي لتوثيق الأردن: التاريخ، الإنسان، والذاكرة
         </div>
       </div>
+    </div>
 
       <div class="search-wrapper">
-        <i class="fas fa-search"></i>
         <input type="text" placeholder="إبحث عن موقع أثرى أو محافظة ..." />
-        <button><i class="fas fa-arrow-left"></i> بحث</button>
+        <button> بحث</button>
       </div>
 
       <h2 class="section-title">
@@ -599,106 +50,76 @@
       <div class="carousel-wrapper">
         <div class="carousel-container" id="carouselContainer">
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/jerash.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/jerash.html'">
               <div class="card-img">
-                <i class="fas fa-columns"></i
-                ><span class="card-badge">روماني</span>
+                <i class="fas fa-columns"></i><span class="card-badge">روماني</span>
               </div>
               <div class="card-body">
                 <h3>جرش</h3>
                 <div class="subhead">اكشف التاريخ بين أعمدة الحضارة</div>
                 <p>مدينة الأعمدة الرومانية، مسرحها الكبير ومعابدها الأثرية.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> روماني</span
-                  ><span><i class="fas fa-flag"></i> بيزنطي</span>
+                  <span><i class="fas fa-flag"></i> روماني</span>
+                  <span><i class="fas fa-flag"></i> بيزنطي</span>
                 </div>
-                <a href="City/jerash.html" class="card-footer-link"
-                  >استكشف جرش <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/jerash.html" class="card-footer-link">استكشف جرش <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/amman.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/amman.html'">
               <div class="card-img">
-                <i class="fas fa-city"></i
-                ><span class="card-badge">عمّوني</span>
+                <i class="fas fa-city"></i><span class="card-badge">عمّوني</span>
               </div>
               <div class="card-body">
                 <h3>عمّان</h3>
                 <div class="subhead">عاصمة التاريخ و قلب الأردن</div>
-                <p>
-                  من جبل القلعة إلى المدرج الروماني، عمّان تمزج بين القديم
-                  والحديث.
-                </p>
+                <p>من جبل القلعة إلى المدرج الروماني، عمّان تمزج بين القديم والحديث.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عمّون</span
-                  ><span><i class="fas fa-flag"></i> روماني</span
-                  ><span><i class="fas fa-flag"></i> إسلامي</span>
+                  <span><i class="fas fa-flag"></i> عمّون</span>
+                  <span><i class="fas fa-flag"></i> روماني</span>
+                  <span><i class="fas fa-flag"></i> إسلامي</span>
                 </div>
-                <a href="City/amman.html" class="card-footer-link"
-                  >استكشف عمّان <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/amman.html" class="card-footer-link">استكشف عمّان <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/irbid.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/irbid.html'">
               <div class="card-img">
-                <i class="fas fa-tree"></i
-                ><span class="card-badge">يوناني</span>
+                <i class="fas fa-tree"></i><span class="card-badge">يوناني</span>
               </div>
               <div class="card-body">
                 <h3>إربد</h3>
                 <div class="subhead">الأصالة و التراث في كل زاوية</div>
                 <p>أرض الحضارات، من تل إربد إلى آثار أم قيس.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> يوناني</span
-                  ><span><i class="fas fa-flag"></i> روماني</span>
+                  <span><i class="fas fa-flag"></i> يوناني</span>
+                  <span><i class="fas fa-flag"></i> روماني</span>
                 </div>
-                <a href="City/irbid.html" class="card-footer-link"
-                  >استكشف إربد <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/irbid.html" class="card-footer-link">استكشف إربد <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/zarqa.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/zarqa.html'">
               <div class="card-img">
-                <i class="fas fa-industry"></i
-                ><span class="card-badge">مملوكي</span>
+                <i class="fas fa-industry"></i><span class="card-badge">مملوكي</span>
               </div>
               <div class="card-body">
                 <h3>الزرقاء</h3>
                 <div class="subhead">قلب الصناعة الأردنية</div>
                 <p>مدينة الصناعة والتراث، تضم قلعة ونبعاً تاريخياً.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> مملوكي</span
-                  ><span><i class="fas fa-flag"></i> عثماني</span>
+                  <span><i class="fas fa-flag"></i> مملوكي</span>
+                  <span><i class="fas fa-flag"></i> عثماني</span>
                 </div>
-                <a href="City/zarqa.html" class="card-footer-link"
-                  >استكشف الزرقاء <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/zarqa.html" class="card-footer-link">استكشف الزرقاء <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/madaba.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/madaba.html'">
               <div class="card-img">
                 <i class="fas fa-map"></i><span class="card-badge">بيزنطي</span>
               </div>
@@ -707,173 +128,129 @@
                 <div class="subhead">مدينة الفسيفساء</div>
                 <p>أقدم خريطة للشرق الأوسط، وكنائس بيزنطية فسيفسائية.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> بيزنطي</span
-                  ><span><i class="fas fa-flag"></i> إسلامي</span>
+                  <span><i class="fas fa-flag"></i> بيزنطي</span>
+                  <span><i class="fas fa-flag"></i> إسلامي</span>
                 </div>
-                <a href="City/madaba.html" class="card-footer-link"
-                  >استكشف مادبا <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/madaba.html" class="card-footer-link">استكشف مادبا <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/karak.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/karak.html'">
               <div class="card-img">
-                <i class="fas fa-castle"></i
-                ><span class="card-badge">صليبي</span>
+                <i class="fas fa-castle"></i><span class="card-badge">صليبي</span>
               </div>
               <div class="card-body">
                 <h3>الكرك</h3>
                 <div class="subhead">قلعة الصليبيين</div>
                 <p>أكبر قلعة صليبية في الأردن، تضم أبراجاً وسراديب تاريخية.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> صليبي</span
-                  ><span><i class="fas fa-flag"></i> مملوكي</span>
+                  <span><i class="fas fa-flag"></i> صليبي</span>
+                  <span><i class="fas fa-flag"></i> مملوكي</span>
                 </div>
-                <a href="City/karak.html" class="card-footer-link"
-                  >استكشف الكرك <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/karak.html" class="card-footer-link">استكشف الكرك <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/maan.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/maan.html'">
               <div class="card-img">
-                <i class="fas fa-train"></i
-                ><span class="card-badge">عثماني</span>
+                <i class="fas fa-train"></i><span class="card-badge">عثماني</span>
               </div>
               <div class="card-body">
                 <h3>معان</h3>
                 <div class="subhead">بوابة الجنوب</div>
                 <p>محطة سكة حديد الحجاز التاريخية، وقلعة معان.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span
-                  ><span><i class="fas fa-flag"></i> مملوكي</span>
+                  <span><i class="fas fa-flag"></i> عثماني</span>
+                  <span><i class="fas fa-flag"></i> مملوكي</span>
                 </div>
-                <a href="City/maan.html" class="card-footer-link"
-                  >استكشف معان <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/maan.html" class="card-footer-link">استكشف معان <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/aqaba.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/aqaba.html'">
               <div class="card-img">
-                <i class="fas fa-water"></i
-                ><span class="card-badge">روماني</span>
+                <i class="fas fa-water"></i><span class="card-badge">روماني</span>
               </div>
               <div class="card-body">
                 <h3>العقبة</h3>
                 <div class="subhead">نافذة الأردن على البحر الأحمر</div>
                 <p>شعاب مرجانية، قلعة تاريخية، وأقدم كنيسة في العالم.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> روماني</span
-                  ><span><i class="fas fa-flag"></i> إسلامي</span>
+                  <span><i class="fas fa-flag"></i> روماني</span>
+                  <span><i class="fas fa-flag"></i> إسلامي</span>
                 </div>
-                <a href="City/aqaba.html" class="card-footer-link"
-                  >استكشف العقبة <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/aqaba.html" class="card-footer-link">استكشف العقبة <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/salt.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/salt.html'">
               <div class="card-img">
-                <i class="fas fa-building"></i
-                ><span class="card-badge">عثماني</span>
+                <i class="fas fa-building"></i><span class="card-badge">عثماني</span>
               </div>
               <div class="card-body">
                 <h3>السلط</h3>
                 <div class="subhead">مدينة التراث العثماني</div>
                 <p>بيوت حجرية عثمانية، متحف تاريخي، ووادي الشتا.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span
-                  ><span><i class="fas fa-flag"></i> بيزنطي</span>
+                  <span><i class="fas fa-flag"></i> عثماني</span>
+                  <span><i class="fas fa-flag"></i> بيزنطي</span>
                 </div>
-                <a href="City/salt.html" class="card-footer-link"
-                  >استكشف السلط <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/salt.html" class="card-footer-link">استكشف السلط <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/mafraq.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/mafraq.html'">
               <div class="card-img">
-                <i class="fas fa-road"></i
-                ><span class="card-badge">عثماني</span>
+                <i class="fas fa-road"></i><span class="card-badge">عثماني</span>
               </div>
               <div class="card-body">
                 <h3>المفرق</h3>
                 <div class="subhead">بوابة الشمال</div>
                 <p>قلعة ومحطة سكة حديد، وتراث بدوي عريق.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span
-                  ><span><i class="fas fa-flag"></i> مملوكي</span>
+                  <span><i class="fas fa-flag"></i> عثماني</span>
+                  <span><i class="fas fa-flag"></i> مملوكي</span>
                 </div>
-                <a href="City/mafraq.html" class="card-footer-link"
-                  >استكشف المفرق <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/mafraq.html" class="card-footer-link">استكشف المفرق <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/ajloun.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/ajloun.html'">
               <div class="card-img">
-                <i class="fas fa-forest"></i
-                ><span class="card-badge">أيوبي</span>
+                <i class="fas fa-forest"></i><span class="card-badge">أيوبي</span>
               </div>
               <div class="card-body">
                 <h3>عجلون</h3>
                 <div class="subhead">قلعة الجبال الخضراء</div>
                 <p>قلعة أيوبية تاريخية، وغابات طبيعية خلابة.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> أيوبي</span
-                  ><span><i class="fas fa-flag"></i> مملوكي</span>
+                  <span><i class="fas fa-flag"></i> أيوبي</span>
+                  <span><i class="fas fa-flag"></i> مملوكي</span>
                 </div>
-                <a href="City/ajloun.html" class="card-footer-link"
-                  >استكشف عجلون <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/ajloun.html" class="card-footer-link">استكشف عجلون <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
-            <div
-              class="carousel-card"
-              onclick="window.location.href = 'City/tafilah.html'"
-            >
+            <div class="carousel-card" onclick="window.location.href = 'City/tafilah.html'">
               <div class="card-img">
-                <i class="fas fa-mountain"></i
-                ><span class="card-badge">عثماني</span>
+                <i class="fas fa-mountain"></i><span class="card-badge">عثماني</span>
               </div>
               <div class="card-body">
                 <h3>الطفيلة</h3>
                 <div class="subhead">بلد الجبال الخضراء</div>
                 <p>قلعة تاريخية، ووادي الحسا الخلاب، وطبيعة جبلية ساحرة.</p>
                 <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span
-                  ><span><i class="fas fa-flag"></i> مملوكي</span>
+                  <span><i class="fas fa-flag"></i> عثماني</span>
+                  <span><i class="fas fa-flag"></i> مملوكي</span>
                 </div>
-                <a href="City/tafilah.html" class="card-footer-link"
-                  >استكشف الطفيلة <i class="fas fa-arrow-left"></i
-                ></a>
+                <a href="City/tafilah.html" class="card-footer-link">استكشف الطفيلة <i class="fas fa-arrow-left"></i></a>
               </div>
             </div>
           </div>
@@ -893,54 +270,18 @@
         <i class="fas fa-chevron-left"></i> أرشيف تشاركي متكامل
       </h2>
       <div class="sub-grid">
-        <a href="#" class="sub-item"
-          ><i class="fas fa-map-pin"></i><span>📍 الموقع والوصول</span
-          ><small>خرائط واتجاهات</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-history"></i><span>🏛️ التاريخ والنشأة</span
-          ><small>الخلفية التاريخية</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-people-arrows"></i><span>👥 الحضارات والسكان</span
-          ><small>الشعوب المتعاقبة</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-user-tie"></i><span>👴 قصص كبار السن</span
-          ><small>ذاكرة حية</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-images"></i><span>📸 صور قديمة وحديثة</span
-          ><small>أرشيف بصري</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-video"></i><span>🎥 فيديوهات وتقارير</span
-          ><small>مادة مصورة</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-microphone-alt"></i><span>🎙️ مقابلات مؤرخين</span
-          ><small>باحثون وسكان</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-newspaper"></i><span>📰 قصص صحفية</span
-          ><small>تغطيات وتقارير</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-map-marked-alt"></i><span>🗺️ الخريطة التفاعلية</span
-          ><small>موقع المكان</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-star"></i><span>⭐ تجارب الزوار</span
-          ><small>تقييمات وانطباعات</small></a
-        >
-        <a href="stories.html" class="sub-item"
-          ><i class="fas fa-upload"></i><span>📤 رفع الصور والتجارب</span
-          ><small>شارك ذاكرتك</small></a
-        >
-        <a href="#" class="sub-item"
-          ><i class="fas fa-users-cog"></i><span>📋 أرشيف تشاركي</span
-          ><small>مساهمات الجميع</small></a
-        >
+        <a href="#" class="sub-item"><i class="fas fa-map-pin"></i><span>📍 الموقع والوصول</span><small>خرائط واتجاهات</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-history"></i><span>🏛️ التاريخ والنشأة</span><small>الخلفية التاريخية</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-people-arrows"></i><span>👥 الحضارات والسكان</span><small>الشعوب المتعاقبة</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-user-tie"></i><span>👴 قصص كبار السن</span><small>ذاكرة حية</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-images"></i><span>📸 صور قديمة وحديثة</span><small>أرشيف بصري</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-video"></i><span>🎥 فيديوهات وتقارير</span><small>مادة مصورة</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-microphone-alt"></i><span>🎙️ مقابلات مؤرخين</span><small>باحثون وسكان</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-newspaper"></i><span>📰 قصص صحفية</span><small>تغطيات وتقارير</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-map-marked-alt"></i><span>🗺️ الخريطة التفاعلية</span><small>موقع المكان</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-star"></i><span>⭐ تجارب الزوار</span><small>تقييمات وانطباعات</small></a>
+        <a href="stories.html" class="sub-item"><i class="fas fa-upload"></i><span>📤 رفع الصور والتجارب</span><small>شارك ذاكرتك</small></a>
+        <a href="#" class="sub-item"><i class="fas fa-users-cog"></i><span>📋 أرشيف تشاركي</span><small>مساهمات الجميع</small></a>
       </div>
 
       <div class="footer-note">
@@ -952,236 +293,14 @@
       </div>
       <div class="footer-links">
         <a href="#"><i class="fas fa-archive"></i> عن المشروع</a>
-        <a href="stories.html"
-          ><i class="fas fa-hand-holding-heart"></i> شارك بتجربتك</a
-        >
+        <a href="stories.html"><i class="fas fa-hand-holding-heart"></i> شارك بتجربتك</a>
         <a href="contact.html"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
-        <a href="#"><i class="fas fa-camera-retro"></i> معرض الصور</a>
-        <a href="map.html"><i class="fas fa-globe-asia"></i> خريطة المواقع</a>
-        <a href="#"><i class="fas fa-newspaper"></i> أخبار وتقارير</a>
       </div>
       <div class="copyright">
-        <i class="fas fa-copyright"></i> 2026 أثر الأردن — نوثائق المكان ونحفظ
-        الحكاية
+        <i class="fas fa-copyright"></i> 2026 أثر الأردن — نوثائق المكان ونحفظ الحكاية
       </div>
     </div>
 
-    <script>
-      (function () {
-        const container = document.getElementById("carouselContainer");
-        const slides = container.querySelectorAll(".carousel-slide");
-        const totalSlides = slides.length; // 12 slides
-        let currentIndex = 0;
-        let autoPlayInterval = null;
-        let isTransitioning = false;
-        let startX = 0;
-        let isDragging = false;
-        let touchStartX = 0;
-        let touchCurrentX = 0;
-
-        function getVisibleSlides() {
-          if (window.innerWidth <= 480) return 1;
-          if (window.innerWidth <= 768) return 2;
-          if (window.innerWidth <= 1024) return 3;
-          return 4;
-        }
-
-        function getSlideWidth() {
-          return 100 / getVisibleSlides();
-        }
-
-        function getMaxIndex() {
-          return totalSlides - getVisibleSlides();
-        }
-
-        function updateTransform(animate = true) {
-          const offset = currentIndex * getSlideWidth();
-          container.style.transition = animate ? "transform 0.5s ease" : "none";
-          // In RTL, we need positive values to move left
-          container.style.transform = `translateX(${offset}%)`;
-        }
-
-        function goToSlide(index) {
-          if (isTransitioning) return;
-          isTransitioning = true;
-
-          // Wrap around
-          if (index > getMaxIndex()) {
-            index = 0;
-          }
-          if (index < 0) {
-            index = getMaxIndex();
-          }
-
-          currentIndex = index;
-          updateTransform(true);
-
-          setTimeout(() => {
-            isTransitioning = false;
-          }, 500);
-        }
-
-        function nextSlide() {
-          if (isTransitioning) return;
-
-          // Move to next slide, wrap if at end
-          if (currentIndex >= getMaxIndex()) {
-            goToSlide(0);
-          } else {
-            goToSlide(currentIndex + 1);
-          }
-        }
-
-        function prevSlide() {
-          if (isTransitioning) return;
-
-          // Move to previous slide, wrap if at beginning
-          if (currentIndex <= 0) {
-            goToSlide(getMaxIndex());
-          } else {
-            goToSlide(currentIndex - 1);
-          }
-        }
-
-        document
-          .getElementById("nextBtn")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            resetAutoPlay();
-            nextSlide();
-          });
-
-        document
-          .getElementById("prevBtn")
-          .addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            resetAutoPlay();
-            prevSlide();
-          });
-
-        // Drag functionality
-        container.addEventListener("mousedown", function (e) {
-          startX = e.pageX;
-          isDragging = true;
-          container.classList.add("grabbing");
-          container.style.transition = "none";
-          resetAutoPlay();
-        });
-
-        document.addEventListener("mousemove", function (e) {
-          if (!isDragging) return;
-          const diff = e.pageX - startX;
-          const currentOffset = currentIndex * getSlideWidth();
-          const newOffset =
-            currentOffset + (diff / container.parentElement.offsetWidth) * 100;
-          container.style.transform = `translateX(${newOffset}%)`;
-        });
-
-        document.addEventListener("mouseup", function (e) {
-          if (!isDragging) return;
-          isDragging = false;
-          container.classList.remove("grabbing");
-
-          const diff = e.pageX - startX;
-          const threshold = 50;
-
-          // In RTL, dragging right should go to previous, dragging left should go to next
-          if (diff > threshold) {
-            prevSlide();
-          } else if (diff < -threshold) {
-            nextSlide();
-          } else {
-            updateTransform(true);
-            isTransitioning = false;
-          }
-
-          startAutoPlay();
-        });
-
-        // Touch functionality
-        container.addEventListener(
-          "touchstart",
-          function (e) {
-            touchStartX = e.touches[0].clientX;
-            isDragging = true;
-            container.style.transition = "none";
-            resetAutoPlay();
-          },
-          { passive: true },
-        );
-
-        container.addEventListener(
-          "touchmove",
-          function (e) {
-            if (!isDragging) return;
-            touchCurrentX = e.touches[0].clientX;
-            const diff = touchCurrentX - touchStartX;
-            const currentOffset = currentIndex * getSlideWidth();
-            const newOffset =
-              currentOffset +
-              (diff / container.parentElement.offsetWidth) * 100;
-            container.style.transform = `translateX(${newOffset}%)`;
-          },
-          { passive: true },
-        );
-
-        container.addEventListener(
-          "touchend",
-          function (e) {
-            if (!isDragging) return;
-            isDragging = false;
-
-            const diff = touchCurrentX - touchStartX;
-            const threshold = 50;
-
-            if (diff > threshold) {
-              prevSlide();
-            } else if (diff < -threshold) {
-              nextSlide();
-            } else {
-              updateTransform(true);
-              isTransitioning = false;
-            }
-
-            startAutoPlay();
-          },
-          { passive: true },
-        );
-
-        function startAutoPlay() {
-          if (autoPlayInterval) clearInterval(autoPlayInterval);
-          autoPlayInterval = setInterval(function () {
-            nextSlide();
-          }, 6000);
-        }
-
-        function resetAutoPlay() {
-          if (autoPlayInterval) clearInterval(autoPlayInterval);
-          startAutoPlay();
-        }
-
-        container.addEventListener("mouseenter", function () {
-          if (autoPlayInterval) clearInterval(autoPlayInterval);
-        });
-
-        container.addEventListener("mouseleave", function () {
-          startAutoPlay();
-        });
-
-        let resizeTimeout;
-        window.addEventListener("resize", function () {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(function () {
-            updateTransform(false);
-          }, 200);
-        });
-
-        // Initialize
-        updateTransform(false);
-        startAutoPlay();
-      })();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
