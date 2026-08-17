@@ -12,35 +12,36 @@
   </head>
   <body>
     <div class="container">
-      <div class="top-bar">
-        <div class="top-bar2">
-          <div class="logo-area">
-            <i class="fas fa-landmark logo-icon"></i>
-            <div>
-              <a href="index.html"
-                ><div class="logo-text">أثر <span>الأردن</span></div></a
-              >
-              <div class="logo-sub">نوثق تاريخ وحضارة الآثار في الأردن</div>
+      <div class="top-container-bg">
+        <div class="top-container">
+          <div class="top-bar">
+            <div class="logo-area">
+              <i class="fas fa-landmark logo-icon"></i>
+              <div>
+                <a href="index.html"><div class="logo-text">أثر الأردن</div></a>
+                <div class="logo-sub">نوثق تاريخ وحضارة الآثار في الأردن</div>
+              </div>
             </div>
-          </div>
-          <div class="top-links">
-            <a href="map.html"><i class="fas fa-map"></i> خريطة الأردن</a>
-            <a href="stories.html"
-              ><i class="fas fa-pen-fancy"></i> قصص الزوار</a
-            >
-            <a href="contact.html"
-              ><i class="fas fa-envelope"></i> تواصل معنا</a
-            >
-            <a href="#" class="lang-btn">عربي</a>
-            <a href="#"><i class="fas fa-globe"></i> English</a>
+            <div class="top-links">
+              <a href="map.html"> خريطة الأردن</a> |
+              <a href="stories.html"> قصص الزوار</a> |
+              <a href="contact.html"> تواصل معنا</a> |
+              <a href="#" class="lang-btn">عربي</a> |
+              <a href="#"> English</a>
+            </div>
           </div>
         </div>
 
-        <div class="hero-tagline">
-          <h1>نوثق المكان ... ونحفظ الحكاية</h1>
-          <div class="search-wrapper">
-            <button><i class="fas fa-search"></i></button>
-            <input type="text" placeholder="إبحث عن موقع أثري أو محافظة ..." />
+        <div class="bottom-container">
+          <div class="hero-tagline">
+            <h1>نوثق المكان ... ونحفظ الحكاية</h1>
+            <div class="search-wrapper">
+              <button><i class="fas fa-search"></i></button>
+              <input
+                type="text"
+                placeholder="إبحث عن موقع أثري أو محافظة ..."
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -53,329 +54,205 @@
         <div class="carousel-container" id="carouselContainer">
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img jerash"
               onclick="window.location.href = 'City/jerash.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/Jerash.jpeg"
-                  alt="جرش"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">روماني</span>
-              </div>
+              <span class="card-badge">روماني</span>
               <div class="card-body">
-                <h3>جرش</h3>
-                <div class="subhead">اكشف التاريخ بين أعمدة الحضارة</div>
-                <p>مدينة الأعمدة الرومانية، مسرحها الكبير ومعابدها الأثرية.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> روماني</span>
-                  <span><i class="fas fa-flag"></i> بيزنطي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة جرش</h3>
+                  <div class="subhead">اكشف التاريخ بين أعمدة الحضارة</div>
+                  <a href="City/jerash.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/jerash.html" class="card-footer-link"
-                  >استكشف جرش <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img amman"
               onclick="window.location.href = 'City/amman.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/amman.jpeg"
-                  alt="عمان"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">عمّوني</span>
-              </div>
+              <span class="card-badge">عمّوني</span>
               <div class="card-body">
-                <h3>عمّان</h3>
-                <div class="subhead">عاصمة التاريخ و قلب الأردن</div>
-                <p>
-                  من جبل القلعة إلى المدرج الروماني، عمّان تمزج بين القديم
-                  والحديث.
-                </p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عمّون</span>
-                  <span><i class="fas fa-flag"></i> روماني</span>
-                  <span><i class="fas fa-flag"></i> إسلامي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة عمّان</h3>
+                  <div class="subhead">عاصمة التاريخ و قلب الأردن</div>
+                  <a href="City/amman.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/amman.html" class="card-footer-link"
-                  >استكشف عمّان <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img irbid"
               onclick="window.location.href = 'City/irbid.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/Irbid.jpeg"
-                  alt="إربد"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">يوناني</span>
-              </div>
+              <span class="card-badge">يوناني</span>
               <div class="card-body">
-                <h3>إربد</h3>
-                <div class="subhead">الأصالة و التراث في كل زاوية</div>
-                <p>أرض الحضارات، من تل إربد إلى آثار أم قيس.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> يوناني</span>
-                  <span><i class="fas fa-flag"></i> روماني</span>
+                <div class="card-body-lower">
+                  <h3>محافظة إربد</h3>
+                  <div class="subhead">الأصالة و التراث في كل زاوية</div>
+                  <a href="City/irbid.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/irbid.html" class="card-footer-link"
-                  >استكشف إربد <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img zarqa"
               onclick="window.location.href = 'City/zarqa.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/zarqa.jpg"
-                  alt="زرقاء"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">مملوكي</span>
-              </div>
+              <span class="card-badge">مملوكي</span>
               <div class="card-body">
-                <h3>الزرقاء</h3>
-                <div class="subhead">قلب الصناعة الأردنية</div>
-                <p>مدينة الصناعة والتراث، تضم قلعة ونبعاً تاريخياً.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> مملوكي</span>
-                  <span><i class="fas fa-flag"></i> عثماني</span>
+                <div class="card-body-lower">
+                  <h3>محافظة الزرقاء</h3>
+                  <div class="subhead">قلب الصناعة الأردنية</div>
+                  <a href="City/zarqa.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/zarqa.html" class="card-footer-link"
-                  >استكشف الزرقاء <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img madaba"
               onclick="window.location.href = 'City/madaba.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/madaba.jpg"
-                  alt="مادبا"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">بيزنطي</span>
-              </div>
+              <span class="card-badge">بيزنطي</span>
               <div class="card-body">
-                <h3>مادبا</h3>
-                <div class="subhead">مدينة الفسيفساء</div>
-                <p>أقدم خريطة للشرق الأوسط، وكنائس بيزنطية فسيفسائية.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> بيزنطي</span>
-                  <span><i class="fas fa-flag"></i> إسلامي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة مادبا</h3>
+                  <div class="subhead">مدينة الفسيفساء</div>
+                  <a href="City/madaba.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/madaba.html" class="card-footer-link"
-                  >استكشف مادبا <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img karak"
               onclick="window.location.href = 'City/karak.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/karak.jpg"
-                  alt="كرك"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">صليبي</span>
-              </div>
+              <span class="card-badge">صليبي</span>
               <div class="card-body">
-                <h3>الكرك</h3>
-                <div class="subhead">قلعة الصليبيين</div>
-                <p>أكبر قلعة صليبية في الأردن، تضم أبراجاً وسراديب تاريخية.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> صليبي</span>
-                  <span><i class="fas fa-flag"></i> مملوكي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة الكرك</h3>
+                  <div class="subhead">قلعة الصليبيين</div>
+                  <a href="City/karak.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/karak.html" class="card-footer-link"
-                  >استكشف الكرك <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img maan"
               onclick="window.location.href = 'City/maan.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/Maan.jpg"
-                  alt="معان"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">عثماني</span>
-              </div>
+              <span class="card-badge">عثماني</span>
               <div class="card-body">
-                <h3>معان</h3>
-                <div class="subhead">بوابة الجنوب</div>
-                <p>محطة سكة حديد الحجاز التاريخية، وقلعة معان.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span>
-                  <span><i class="fas fa-flag"></i> مملوكي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة معان</h3>
+                  <div class="subhead">بوابة الجنوب</div>
+                  <a href="City/maan.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/maan.html" class="card-footer-link"
-                  >استكشف معان <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img aqaba"
               onclick="window.location.href = 'City/aqaba.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/aqaba.jpg"
-                  alt="عقبة"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">روماني</span>
-              </div>
+              <span class="card-badge">روماني</span>
               <div class="card-body">
-                <h3>العقبة</h3>
-                <div class="subhead">نافذة الأردن على البحر الأحمر</div>
-                <p>شعاب مرجانية، قلعة تاريخية، وأقدم كنيسة في العالم.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> روماني</span>
-                  <span><i class="fas fa-flag"></i> إسلامي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة العقبة</h3>
+                  <div class="subhead">نافذة الأردن على البحر الأحمر</div>
+                  <a href="City/aqaba.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/aqaba.html" class="card-footer-link"
-                  >استكشف العقبة <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img salt"
               onclick="window.location.href = 'City/salt.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/salt.jpeg"
-                  alt="سلط"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">عثماني</span>
-              </div>
+              <span class="card-badge">عثماني</span>
               <div class="card-body">
-                <h3>السلط</h3>
-                <div class="subhead">مدينة التراث العثماني</div>
-                <p>بيوت حجرية عثمانية، متحف تاريخي، ووادي الشتا.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span>
-                  <span><i class="fas fa-flag"></i> بيزنطي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة السلط</h3>
+                  <div class="subhead">مدينة التراث العثماني</div>
+                  <a href="City/salt.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/salt.html" class="card-footer-link"
-                  >استكشف السلط <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img mafraq"
               onclick="window.location.href = 'City/mafraq.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/mafraq.jpg"
-                  alt="مفرق"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">عثماني</span>
-              </div>
+              <span class="card-badge">عثماني</span>
               <div class="card-body">
-                <h3>المفرق</h3>
-                <div class="subhead">بوابة الشمال</div>
-                <p>قلعة ومحطة سكة حديد، وتراث بدوي عريق.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span>
-                  <span><i class="fas fa-flag"></i> مملوكي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة المفرق</h3>
+                  <div class="subhead">بوابة الشمال</div>
+                  <a href="City/mafraq.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/mafraq.html" class="card-footer-link"
-                  >استكشف المفرق <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img ajloun"
               onclick="window.location.href = 'City/ajloun.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/ajloun.jpg"
-                  alt="عجلون"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">أيوبي</span>
-              </div>
+              <span class="card-badge">أيوبي</span>
               <div class="card-body">
-                <h3>عجلون</h3>
-                <div class="subhead">قلعة الجبال الخضراء</div>
-                <p>قلعة أيوبية تاريخية، وغابات طبيعية خلابة.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> أيوبي</span>
-                  <span><i class="fas fa-flag"></i> مملوكي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة عجلون</h3>
+                  <div class="subhead">قلعة الجبال الخضراء</div>
+                  <a href="City/ajloun.html" class="card-footer-link"
+                    ><i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/ajloun.html" class="card-footer-link"
-                  >استكشف عجلون <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
           <div class="carousel-slide">
             <div
-              class="carousel-card"
+              class="carousel-card card-img tafilah"
               onclick="window.location.href = 'City/tafilah.html'"
             >
-              <div class="card-img">
-                <img
-                  src="Pics/Tafila.jpg"
-                  alt="طفيلة"
-                  style="width: 100%; height: 100%; object-fit: cover"
-                />
-                <span class="card-badge">عثماني</span>
-              </div>
+              <span class="card-badge">عثماني</span>
               <div class="card-body">
-                <h3>الطفيلة</h3>
-                <div class="subhead">بلد الجبال الخضراء</div>
-                <p>قلعة تاريخية، ووادي الحسا الخلاب، وطبيعة جبلية ساحرة.</p>
-                <div class="badge-list">
-                  <span><i class="fas fa-flag"></i> عثماني</span>
-                  <span><i class="fas fa-flag"></i> مملوكي</span>
+                <div class="card-body-lower">
+                  <h3>محافظة الطفيلة</h3>
+                  <div class="subhead">بلد الجبال الخضراء</div>
+                  <a href="City/tafilah.html" class="card-footer-link">
+                    <i class="fas fa-arrow-left"></i
+                  ></a>
                 </div>
-                <a href="City/tafilah.html" class="card-footer-link"
-                  >استكشف الطفيلة <i class="fas fa-arrow-left"></i
-                ></a>
               </div>
             </div>
           </div>
