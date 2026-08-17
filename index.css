@@ -24,7 +24,7 @@ a {
 
 /* ===== TOP CONTAINER BACKGROUND ===== */
 .top-container-bg {
-  background-image: url("/Pics/All.jpg");
+  background-image: url("images/all.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -482,40 +482,40 @@ a {
 
 /* ===== CARD IMAGE CLASSES ===== */
 .card-img.jerash {
-  background-image: url("Pics/Jerash.jpg");
+  background-image: url("images/jerash.jpg");
 }
 .card-img.amman {
-  background-image: url("Pics/Amman.jpg");
+  background-image: url("images/amman.jpg");
 }
 .card-img.irbid {
-  background-image: url("Pics/Irbid.jpg");
+  background-image: url("images/irbid.jpg");
 }
 .card-img.zarqa {
-  background-image: url("Pics/Zarqa.jpg");
+  background-image: url("images/zarqa.jpg");
 }
 .card-img.madaba {
-  background-image: url("Pics/Madaba.jpg");
+  background-image: url("images/madaba.jpg");
 }
 .card-img.karak {
-  background-image: url("Pics/Karak.jpg");
+  background-image: url("images/karak.jpg");
 }
 .card-img.maan {
-  background-image: url("Pics/Maan.jpg");
+  background-image: url("images/maan.jpg");
 }
 .card-img.aqaba {
-  background-image: url("Pics/Aqaba.jpg");
+  background-image: url("images/aqaba.jpg");
 }
 .card-img.salt {
-  background-image: url("Pics/Salt.jpg");
+  background-image: url("images/salt.jpg");
 }
 .card-img.mafraq {
-  background-image: url("Pics/Mafraq.jpg");
+  background-image: url("images/mafraq.jpg");
 }
 .card-img.ajloun {
-  background-image: url("Pics/Ajloun.jpg");
+  background-image: url("images/ajloun.jpg");
 }
 .card-img.tafilah {
-  background-image: url("Pics/tafilah.jpg");
+  background-image: url("images/tafilah.jpg");
 }
 
 /* ===== RESPONSIVE ===== */
