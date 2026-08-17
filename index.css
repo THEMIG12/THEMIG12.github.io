@@ -318,7 +318,7 @@ a {
   width: 180px;
   padding: 16px 18px 18px;
   margin: 80px 0 0 0;
-  border-radius: 30px;
+  border-radius: 25px 25px 5px 5px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -519,70 +519,110 @@ a {
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .carousel-slide {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
+
+  .card-img {
+    height: 160px;
+  }
+
+  .carousel-card .card-body-lower {
+    width: 160px;
+    margin: 60px 0 0 0;
+  }
 }
 
 @media (max-width: 768px) {
   body {
-    padding: 0 12px;
+    padding: 0 10px;
+  }
+
+  .container {
+    padding: 10px 0 30px;
+  }
+
+  .top-container-bg {
+    min-height: 50vh;
   }
 
   .top-container {
-    min-height: 60vh;
-    padding: 20px;
-    gap: 30px;
+    padding: 15px;
+    gap: 20px;
   }
 
   .top-bar {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 12px 18px;
-  }
-
-  .top-container .logo-text {
-    font-size: 2rem;
-  }
-
-  .hero-tagline h1 {
-    font-size: 2rem;
-  }
-
-  .top-links {
-    justify-content: center;
+    padding: 10px;
     gap: 15px;
   }
 
-  .search-wrapper {
-    flex-wrap: wrap;
-    border-radius: 30px;
-    padding: 4px 8px;
+  .logo-area {
+    flex-direction: column;
+    gap: 5px;
   }
 
-  .search-wrapper input {
-    padding: 8px 4px;
-    font-size: 0.9rem;
-    width: 70%;
+  .logo-icon {
+    font-size: 1.8rem;
   }
 
-  .search-wrapper button {
-    padding: 10px;
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  .logo-sub {
+    font-size: 0.65rem;
+  }
+
+  .top-links {
+    padding-top: 15px;
+    gap: 15px;
+    font-size: 0.8rem;
     justify-content: center;
   }
 
-  /* Mobile grid layout */
+  .bottom-container {
+    padding: 20px 15px;
+  }
+
+  .hero-tagline h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .search-wrapper {
+    flex-wrap: nowrap;
+    border-radius: 30px;
+    padding: 3px;
+    gap: 5px;
+  }
+
+  .search-wrapper input {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+    width: 75%;
+  }
+
+  .search-wrapper button {
+    padding: 8px 12px;
+    min-width: 40px;
+  }
+
+  /* Mobile grid layout - 2 columns */
   .carousel-wrapper {
     overflow: visible;
+    margin-bottom: 30px;
   }
 
   .carousel-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 12px;
     transform: none !important;
     transition: none;
     cursor: default;
@@ -602,41 +642,7 @@ a {
   .carousel-card {
     width: 100%;
     height: 100%;
-  }
-
-  .card-img {
-    height: 120px;
-    font-size: 2.5rem;
-  }
-
-  .sub-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .section-title {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .top-container {
-    min-height: 50vh;
-    padding: 15px;
-    gap: 20px;
-  }
-
-  .top-container .logo-text {
-    font-size: 1.6rem;
-  }
-
-  .hero-tagline h1 {
-    font-size: 1.5rem;
-  }
-
-  .carousel-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    border-radius: 10px;
   }
 
   .card-img {
@@ -644,38 +650,240 @@ a {
     font-size: 2rem;
   }
 
+  .card-badge {
+    top: 5px;
+    right: 5px;
+    padding: 2px 8px;
+    font-size: 0.55rem;
+  }
+
   .carousel-card .card-body {
-    padding: 10px 12px 12px;
+    padding: 8px;
+  }
+
+  .carousel-card .card-body-lower {
+    width: 100%;
+    padding: 10px;
+    margin: 40px 0 0 0;
+    border-radius: 15px 15px 5px 5px;
   }
 
   .carousel-card .card-body h3 {
-    font-size: 1rem;
-  }
-
-  .carousel-card .card-body p {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
   }
 
   .carousel-card .card-body .subhead {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 
-  .carousel-card .card-body .badge-list {
+  .carousel-card .card-footer-link {
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+
+  .sub-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .sub-item {
+    padding: 12px 8px;
+    border-radius: 20px 8px 20px 8px;
+  }
+
+  .sub-item i {
+    font-size: 1.4rem;
+  }
+
+  .sub-item span {
+    font-size: 0.75rem;
+  }
+
+  .sub-item small {
+    font-size: 0.6rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin: 25px 0 15px;
+    padding-right: 10px;
+  }
+
+  .footer-note {
+    padding: 15px;
+  }
+
+  .footer-note h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-note p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 8px;
+  }
+
+  .container {
+    padding: 8px 0 20px;
+  }
+
+  .top-container-bg {
+    min-height: 45vh;
+    border-radius: 10px;
+  }
+
+  .top-container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .logo-sub {
+    font-size: 0.6rem;
+  }
+
+  .top-links {
+    padding-top: 10px;
+    gap: 10px;
+    font-size: 0.75rem;
+  }
+
+  .top-links a {
+    padding: 2px 4px;
+  }
+
+  .bottom-container {
+    padding: 15px 10px;
+  }
+
+  .hero-tagline h1 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .search-wrapper {
+    border-radius: 25px;
+    padding: 2px;
+    gap: 3px;
+  }
+
+  .search-wrapper input {
+    padding: 6px 5px;
+    font-size: 0.8rem;
+    width: 70%;
+  }
+
+  .search-wrapper button {
+    padding: 6px 10px;
+    min-width: 35px;
+  }
+
+  .search-wrapper button i {
+    font-size: 0.9rem;
+  }
+
+  /* Mobile grid - still 2 columns but tighter */
+  .carousel-container {
+    gap: 8px;
+  }
+
+  .card-img {
+    height: 110px;
+    font-size: 1.5rem;
+  }
+
+  .carousel-card .card-body-lower {
+    padding: 8px 6px;
+    margin: 30px 0 0 0;
+    border-radius: 12px 12px 4px 4px;
+  }
+
+  .carousel-card .card-body h3 {
+    font-size: 0.85rem;
+  }
+
+  .carousel-card .card-body .subhead {
     font-size: 0.6rem;
   }
 
   .carousel-card .card-footer-link {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+  }
+
+  .card-badge {
+    top: 3px;
+    right: 3px;
+    padding: 1px 6px;
+    font-size: 0.5rem;
   }
 
   .sub-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
   }
 
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
+  .sub-item {
+    padding: 10px 6px;
+    border-radius: 15px 6px 15px 6px;
+  }
+
+  .sub-item i {
+    font-size: 1.2rem;
+  }
+
+  .sub-item span {
+    font-size: 0.7rem;
+  }
+
+  .sub-item small {
+    font-size: 0.55rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    margin: 20px 0 10px;
+  }
+
+  .footer-note {
+    padding: 12px;
+    border-radius: 30px 8px 30px 8px;
+  }
+
+  .footer-note h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-note p {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    gap: 10px 20px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 350px) {
+  /* For very small screens, switch to 1 column */
+  .carousel-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card-img {
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .carousel-card .card-body-lower {
+    width: 100%;
+    margin: 40px 0 0 0;
   }
 }
